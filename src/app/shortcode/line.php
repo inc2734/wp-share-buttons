@@ -8,8 +8,13 @@
 class Inc2734_WP_Share_Buttons_Shortcode_Line extends Inc2734_WP_Share_Buttons_Abstract_Shortcode {
 
 	public function _shortcode( $attributes ) {
+		if ( ! isset( $attributes['post_id'] ) ) {
+			return;
+		}
+
 		$attributes = shortcode_atts( array(
-			'type'  => 'balloon',
+			'type'    => 'balloon',
+			'post_id' => '',
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {
@@ -19,7 +24,8 @@ class Inc2734_WP_Share_Buttons_Shortcode_Line extends Inc2734_WP_Share_Buttons_A
 		}
 
 		return $this->render( 'line/' . $file, array(
-			'type' => $attributes['type'],
+			'type'    => $attributes['type'],
+			'post_id' => $attributes['post_id'],
 		) );
 	}
 }

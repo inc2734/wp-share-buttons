@@ -8,8 +8,13 @@
 class Inc2734_WP_Share_Buttons_Shortcode_Facebook extends Inc2734_WP_Share_Buttons_Abstract_Shortcode {
 
 	public function _shortcode( $attributes ) {
+		if ( ! isset( $attributes['post_id'] ) ) {
+			return;
+		}
+
 		$attributes = shortcode_atts( array(
-			'type' => 'balloon',
+			'type'    => 'balloon',
+			'post_id' => '',
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {
@@ -18,13 +23,14 @@ class Inc2734_WP_Share_Buttons_Shortcode_Facebook extends Inc2734_WP_Share_Butto
 			$file = 'facebook';
 		}
 
-		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( get_the_ID(), 'facebook' );
+		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( $attributes['post_id'], 'facebook' );
 		$has_cache   = $count_cache->is_enabled();
 		$cache       = $count_cache->get();
 		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
 
 		return $this->render( 'facebook/' . $file, array(
 			'type'      => $attributes['type'],
+			'post_id'   => $attributes['post_id'],
 			'has_cache' => $has_cache,
 			'count'     => $count,
 		) );

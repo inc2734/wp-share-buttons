@@ -40,7 +40,7 @@ new Inc2734_WP_Share_Buttons();
 ## Shortcodes
 ### All buttons
 ```
-[wp_share_buttons type="(Optional)" title="(Optional)"]
+[wp_share_buttons type="(Optional)" title="(Optional)" post_id="(Required)"]
 
 type:
 Baloon, horizontal, icon, block, official
@@ -49,37 +49,37 @@ When type is not official, buttons sums http and https counts.
 
 ### Facebook
 ```
-[wp_share_buttons_facebook type="(Optional)"]
+[wp_share_buttons_facebook type="(Optional)" post_id="(Required)"]
 ```
 
 ### Twitter
 ```
-[wp_share_buttons_twitter type="(Optional)" title="(Optional)"]
+[wp_share_buttons_twitter type="(Optional)" title="(Optional)" post_id="(Required)"]
 ```
 
 ### Hatna Bookmark
 ```
-[wp_share_buttons_hatena type="(Optional)"]
+[wp_share_buttons_hatena type="(Optional)" post_id="(Required)"]
 ```
 
 ### Feedly
 ```
-[wp_share_buttons_feedly type="(Optional)"]
+[wp_share_buttons_feedly type="(Optional)" post_id="(Required)"]
 ```
 
 ### Pocket
 ```
-[wp_share_buttons_pocket type="(Optional)"]
+[wp_share_buttons_pocket type="(Optional)" title="(Optional)" post_id="(Required)"]
 ```
 
 ### Line
 ```
-[wp_share_buttons_line type="(Optional)" title="(Optional)"]
+[wp_share_buttons_line type="(Optional)" post_id="(Required)"]
 ```
 
 ### Feed
 ```
-[wp_share_buttons_feed type="(Optional)"]
+[wp_share_buttons_feed type="(Optional)" post_id="(Required)"]
 ```
 
 ## Filter hooks

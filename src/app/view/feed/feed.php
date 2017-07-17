@@ -1,4 +1,6 @@
-<div class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--feed">
+<div id="wp-share-buttons-feed-<?php echo esc_attr( $post_id ); ?>"
+	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--feed"
+>
 	<?php if ( 'icon' !== $type ) : ?>
 		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>

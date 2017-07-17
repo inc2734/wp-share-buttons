@@ -8,12 +8,18 @@
 class Inc2734_WP_Share_Buttons_Shortcode_Feed extends Inc2734_WP_Share_Buttons_Abstract_Shortcode {
 
 	public function _shortcode( $attributes ) {
+		if ( ! isset( $attributes['post_id'] ) ) {
+			return;
+		}
+
 		$attributes = shortcode_atts( array(
-			'type' => 'balloon',
+			'type'    => 'balloon',
+			'post_id' => '',
 		), $attributes );
 
 		return $this->render( 'feed/feed', array(
-			'type' => $attributes['type'],
+			'type'    => $attributes['type'],
+			'post_id' => $attributes['post_id'],
 		) );
 	}
 }

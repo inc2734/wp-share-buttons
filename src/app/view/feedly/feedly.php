@@ -1,5 +1,6 @@
-<div class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--feedly"
-	data-wp-share-buttons-postid="<?php the_ID(); ?>"
+<div id="wp-share-buttons-feedly-<?php echo esc_attr( $post_id ); ?>"
+	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--feedly"
+	data-wp-share-buttons-postid="<?php echo esc_attr( $post_id ); ?>"
 	data-wp-share-buttons-has-cache="<?php echo esc_attr( $has_cache ); ?>"
 >
 	<?php if ( 'icon' !== $type ) : ?>

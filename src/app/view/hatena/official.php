@@ -1,5 +1,5 @@
 <?php
-$permalink = get_permalink();
+$permalink = get_permalink( $post_id );
 $target = str_replace( array( 'https://', 'http://' ), '', $permalink );
 if ( 0 === strpos( $permalink, 'https://' ) ) {
 	$target = 's/' . $target;
