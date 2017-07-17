@@ -11,10 +11,9 @@ export default class Inc2734_WP_Share_Buttons_Twitter extends Inc2734_WP_Share_B
   }
 
   count() {
-    const api = wp_share_buttons_twitter.endpoint;
-    new Inc2734_WP_Share_Buttons_Share_Count(api, 'json', {
-        action     : wp_share_buttons_twitter.action,
-        _ajax_nonce: wp_share_buttons_twitter._ajax_nonce,
+    new Inc2734_WP_Share_Buttons_Share_Count(inc2734_wp_share_buttons_twitter.endpoint, 'json', {
+        action     : inc2734_wp_share_buttons_twitter.action,
+        _ajax_nonce: inc2734_wp_share_buttons_twitter._ajax_nonce,
         post_id    : this.params.post_id,
         url        : this.params.url
       }

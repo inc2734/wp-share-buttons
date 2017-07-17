@@ -21,10 +21,9 @@ class Inc2734_WP_Share_Buttons_Hatena extends Inc2734_WP_Share_Buttons_Abstract_
 		$body = wp_remote_retrieve_body( $response );
 
 		if ( '' === $body ) {
-			return '-';
+			return 0;
 		}
 
-		$body = json_decode( $body, true );
 		return $body;
 	}
 }

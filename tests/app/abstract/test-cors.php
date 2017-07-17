@@ -24,7 +24,7 @@ class Inc2734_WP_Share_Buttons_Abstract_CORS_Test extends WP_UnitTestCase {
 	 * @test
 	 */
 	public function _ajax() {
-		$object = new Inc2734_WP_Share_Buttons_Facebook( 'wp_share_buttons_facebook' );
+		$object = new Inc2734_WP_Share_Buttons_Facebook( 'facebook' );
 
 		// Pattern: ! isset( $_GET['post_id'] )
 		ob_start();
@@ -32,23 +32,15 @@ class Inc2734_WP_Share_Buttons_Abstract_CORS_Test extends WP_UnitTestCase {
 		$response = json_decode( ob_get_clean(), true );
 		$this->assertEquals( '-', $response['count'] );
 
-		// Pattern: ! isset( $_GET['url'] )
-		$_GET['post_id'] = $this->factory->post->create();
-		ob_start();
-		$object->_ajax();
-		$response = json_decode( ob_get_clean(), true );
-		$this->assertEquals( '-', $response['count'] );
-
 		// Pattern: no cache
 		$_GET['post_id'] = $this->factory->post->create();
-		$_GET['url']     = 'http://example.org/';
-		$cache = get_post_meta( $_GET['post_id'], '_wp_share_buttons_facebook_count', true );
-		$this->assertEquals( '', $cache );
+		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( $_GET['post_id'], 'facebook' );
+		$cache = $count_cache->get();
+		$this->assertNull( $cache );
 		ob_start();
 		$object->_ajax();
 		$response = json_decode( ob_get_clean(), true );
 		$this->assertSame( 1, preg_match( '/^\d+$/', $response['count'] ) );
-		$cache = get_post_meta( $_GET['post_id'], '_wp_share_buttons_facebook_count', true );
-		$this->assertNotEquals( '', $cache );
+		$this->assertNotEquals( '', $count_cache->get() );
 	}
 }

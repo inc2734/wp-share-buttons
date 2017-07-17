@@ -8,7 +8,6 @@ export default class Inc2734_WP_Share_Buttons_Button {
       this.button = button;
       this.params = $.extend({
         post_id: this.button.data('wp-share-buttons-postid'),
-        url    : this.button.data('wp-share-buttons-url')
       }, params);;
 
       if (! this.button.data('wp-share-buttons-has-cache')) {

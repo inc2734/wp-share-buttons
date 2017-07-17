@@ -8,6 +8,8 @@ This library adds share button shortcodes for WordPress.
 This buttons display to sum http and https counts.
 And, It works lightly with asynchronous display and caching.
 
+This buttons can use for singular pages.
+
 ## Install
 ```
 $ composer require inc2734/wp-share-buttons
@@ -38,7 +40,7 @@ new Inc2734_WP_Share_Buttons();
 ## Shortcodes
 ### All buttons
 ```
-[wp_share_buttons type="(Optional)" permalink="(Optional)" feed="(Optional)" title="(Optional)"]
+[wp_share_buttons type="(Optional)" title="(Optional)"]
 
 type:
 Baloon, horizontal, icon, block, official
@@ -47,37 +49,37 @@ When type is not official, buttons sums http and https counts.
 
 ### Facebook
 ```
-[wp_share_buttons_facebook type="(Optional)" permalink="(Optional)"]
+[wp_share_buttons_facebook type="(Optional)"]
 ```
 
 ### Twitter
 ```
-[wp_share_buttons_twitter type="(Optional)" permalink="(Optional)" title="(Optional)"]
+[wp_share_buttons_twitter type="(Optional)" title="(Optional)"]
 ```
 
 ### Hatna Bookmark
 ```
-[wp_share_buttons_hatena type="(Optional)" permalink="(Optional)"]
+[wp_share_buttons_hatena type="(Optional)"]
 ```
 
 ### Feedly
 ```
-[wp_share_buttons_feedly type="(Optional)" feed="(Optional)"]
+[wp_share_buttons_feedly type="(Optional)"]
 ```
 
 ### Pocket
 ```
-[wp_share_buttons_pocket type="(Optional)" permalink="(Optional)"]
+[wp_share_buttons_pocket type="(Optional)"]
 ```
 
 ### Line
 ```
-[wp_share_buttons_line type="(Optional)" permalink="(Optional)" title="(Optional)"]
+[wp_share_buttons_line type="(Optional)" title="(Optional)"]
 ```
 
 ### Feed
 ```
-[wp_share_buttons_feed type="(Optional)" feed="(Optional)"]
+[wp_share_buttons_feed type="(Optional)"]
 ```
 
 ## Filter hooks

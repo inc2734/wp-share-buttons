@@ -14,6 +14,6 @@ if ( 'ja' === get_locale() ) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-share-button" data-href="<?php echo esc_url( $permalink ); ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-	<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( urlencode( $permalink ) ); ?>"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_facebook_label', 'Share' ) ); ?></a>
+<div class="fb-share-button" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+	<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( urlencode( get_permalink() ) ); ?>"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_facebook_label', 'Share' ) ); ?></a>
 </div>

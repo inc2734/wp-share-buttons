@@ -9,8 +9,7 @@ class Inc2734_WP_Share_Buttons_Shortcode_Hatena extends Inc2734_WP_Share_Buttons
 
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
-			'type'      => 'balloon',
-			'permalink' => get_permalink(),
+			'type' => 'balloon',
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {
@@ -19,13 +18,13 @@ class Inc2734_WP_Share_Buttons_Shortcode_Hatena extends Inc2734_WP_Share_Buttons
 			$file = 'hatena';
 		}
 
-		$has_cache = inc2734_wp_share_buttons_has_count_cache( get_the_ID(), $this->shortcode_name );
-		$cache     = inc2734_wp_share_buttons_get_count_cache( get_the_ID(), $this->shortcode_name );
-		$count     = ( ! is_null( $cache ) ) ? $cache : 0;
+		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( get_the_ID(), 'hatena' );
+		$has_cache   = $count_cache->is_enabled();
+		$cache       = $count_cache->get();
+		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
 
 		return $this->render( 'hatena/' . $file, array(
 			'type'      => $attributes['type'],
-			'permalink' => $attributes['permalink'],
 			'has_cache' => $has_cache,
 			'count'     => $count,
 		) );

@@ -10,12 +10,10 @@ class Inc2734_WP_Share_Buttons_Shortcode_Feed extends Inc2734_WP_Share_Buttons_A
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
 			'type' => 'balloon',
-			'feed' => get_bloginfo( 'rss2_url' ),
 		), $attributes );
 
 		return $this->render( 'feed/feed', array(
 			'type' => $attributes['type'],
-			'feed' => $attributes['feed'],
 		) );
 	}
 }

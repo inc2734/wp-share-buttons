@@ -9,8 +9,7 @@ class Inc2734_WP_Share_Buttons_Shortcode_Pocket extends Inc2734_WP_Share_Buttons
 
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
-			'type'      => 'balloon',
-			'permalink' => get_permalink(),
+			'type' => 'balloon',
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {
@@ -20,8 +19,7 @@ class Inc2734_WP_Share_Buttons_Shortcode_Pocket extends Inc2734_WP_Share_Buttons
 		}
 
 		return $this->render( 'pocket/' . $file, array(
-			'type'      => $attributes['type'],
-			'permalink' => $attributes['permalink'],
+			'type' => $attributes['type'],
 		) );
 	}
 }

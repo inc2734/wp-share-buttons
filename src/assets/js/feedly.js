@@ -10,10 +10,9 @@ export default class Inc2734_WP_Share_Buttons_Feedly extends Inc2734_WP_Share_Bu
   }
 
   count() {
-    const api = wp_share_buttons_feedly.endpoint;
-    new Inc2734_WP_Share_Buttons_Share_Count(api, 'json', {
-        action     : wp_share_buttons_feedly.action,
-        _ajax_nonce: wp_share_buttons_feedly._ajax_nonce,
+    new Inc2734_WP_Share_Buttons_Share_Count(inc2734_wp_share_buttons_feedly.endpoint, 'json', {
+        action     : inc2734_wp_share_buttons_feedly.action,
+        _ajax_nonce: inc2734_wp_share_buttons_feedly._ajax_nonce,
         post_id    : this.params.post_id,
         url        : this.params.url
       }

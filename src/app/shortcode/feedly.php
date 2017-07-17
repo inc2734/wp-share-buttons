@@ -10,7 +10,6 @@ class Inc2734_WP_Share_Buttons_Shortcode_Feedly extends Inc2734_WP_Share_Buttons
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
 			'type' => 'balloon',
-			'feed' => get_bloginfo( 'rss2_url' ),
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {
@@ -19,13 +18,13 @@ class Inc2734_WP_Share_Buttons_Shortcode_Feedly extends Inc2734_WP_Share_Buttons
 			$file = 'feedly';
 		}
 
-		$has_cache = inc2734_wp_share_buttons_has_count_cache( get_the_ID(), $this->shortcode_name );
-		$cache     = inc2734_wp_share_buttons_get_count_cache( get_the_ID(), $this->shortcode_name );
-		$count     = ( ! is_null( $cache ) ) ? $cache : 0;
+		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( get_the_ID(), 'feedly' );
+		$has_cache   = $count_cache->is_enabled();
+		$cache       = $count_cache->get();
+		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
 
 		return $this->render( 'feedly/' . $file, array(
 			'type'      => $attributes['type'],
-			'feed'      => $attributes['feed'],
 			'has_cache' => $has_cache,
 			'count'     => $count,
 		) );
