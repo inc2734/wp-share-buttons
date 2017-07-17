@@ -10,6 +10,7 @@ class Inc2734_WP_Share_Buttons_Shortcode_Pocket extends Inc2734_WP_Share_Buttons
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
 			'type' => 'balloon',
+			'title' => get_the_title() . ' - ' . get_bloginfo( 'name' ),
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {
@@ -19,7 +20,8 @@ class Inc2734_WP_Share_Buttons_Shortcode_Pocket extends Inc2734_WP_Share_Buttons
 		}
 
 		return $this->render( 'pocket/' . $file, array(
-			'type' => $attributes['type'],
+			'type'  => $attributes['type'],
+			'title' => $attributes['title'],
 		) );
 	}
 }

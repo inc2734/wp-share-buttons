@@ -10,7 +10,7 @@ class Inc2734_WP_Share_Buttons_Shortcode_Twitter extends Inc2734_WP_Share_Button
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
 			'type'  => 'balloon',
-			'title' => wp_get_document_title(),
+			'title' => get_the_title() . ' - ' . get_bloginfo( 'name' ),
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {

@@ -10,7 +10,6 @@ class Inc2734_WP_Share_Buttons_Shortcode_Line extends Inc2734_WP_Share_Buttons_A
 	public function _shortcode( $attributes ) {
 		$attributes = shortcode_atts( array(
 			'type'  => 'balloon',
-			'title' => wp_get_document_title(),
 		), $attributes );
 
 		if ( 'official' === $attributes['type'] ) {

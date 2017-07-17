@@ -7,7 +7,7 @@
 			<?php echo esc_html( $count ); ?>
 		</div>
 	<?php endif; ?>
-	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://twitter.com/share?&amp;text=' . $title . '&amp;url=' . urlencode( get_permalink() ) ); ?>" target="_blank">
+	<a class="wp-share-button__button" href="https://twitter.com/share?&amp;text=<?php echo esc_attr( $title ); ?>&amp;url=<?php the_permalink(); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--twitter"></span>
 		<span class="wp-share-button__label"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_twitter_label', 'Tweet' ) ); ?></span>
 	</a>
