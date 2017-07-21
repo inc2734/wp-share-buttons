@@ -10,6 +10,6 @@
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink( $post_id ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--facebook"></span>
-		<span class="wp-share-button__label"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_facebook_label', 'Share' ) ); ?></span>
+		<span class="wp-share-button__label"><?php esc_html_e( 'Share', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

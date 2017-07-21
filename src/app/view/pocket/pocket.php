@@ -6,6 +6,6 @@
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="https://getpocket.com/edit?url=<?php the_permalink( $post_id ); ?>&amp;title=<?php echo esc_attr( $title ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--pocket"></span>
-		<span class="wp-share-button__label"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_pocket_label', 'Pocket' ) ); ?></span>
+		<span class="wp-share-button__label"><?php esc_html_e( 'Pocket', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

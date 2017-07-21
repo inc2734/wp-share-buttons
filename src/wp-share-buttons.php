@@ -20,6 +20,8 @@ foreach ( $includes as $include ) {
 class Inc2734_WP_Share_Buttons {
 
 	public function __construct() {
+		load_textdomain( 'inc2734-wp-share-buttons', __DIR__ . '/languages/' . get_locale() . '.mo' );
+
 		new Inc2734_WP_Share_Buttons_Facebook( 'facebook' );
 		new Inc2734_WP_Share_Buttons_Shortcode_Facebook( 'wp_share_buttons_facebook');
 

@@ -1,9 +1,8 @@
 {
   "name": "inc2734/wp-share-buttons",
   "description": "A library for WordPress theme that adds social share buttons.",
-  "type": "wordpress-plugin",
   "license": "GPL-2.0+",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "authors": [
     {
       "name": "Takashi Kitajima",

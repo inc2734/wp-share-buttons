@@ -6,6 +6,6 @@
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="https://timeline.line.me/social-plugin/share?url=<?php the_permalink( $post_id ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--line"></span>
-		<span class="wp-share-button__label"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_line_label', 'LINE' ) ); ?></span>
+		<span class="wp-share-button__label"><?php esc_html_e( 'LINE', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

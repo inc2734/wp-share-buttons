@@ -10,6 +10,6 @@
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="http://cloud.feedly.com/#subscription%2Ffeed%2F<?php echo esc_attr( urlencode( get_bloginfo( 'rss2_url' ) ) ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--feedly"></span>
-		<span class="wp-share-button__label"><?php echo esc_html( apply_filters( 'inc2734_wp_share_buttons_feedly_label', 'Feedly' ) ); ?></span>
+		<span class="wp-share-button__label"><?php esc_html_e( 'Feedly', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

@@ -15,7 +15,7 @@
     background-color: #f5f5f5;
     border-radius: 3px;
     color: #333;
-    font-family: Arial, serif;
+    font-family: Arial, sans-serif;
     font-size: 11px;
     overflow: hidden;
     white-space: nowrap;
@@ -53,7 +53,7 @@
    * Type: Balloon
    */
   &--balloon {
-    width: 80px;
+    width: 92px;
 
     #{$root}__count {
       @include wp-share-button-bottom-balloon(5px, #fff, #ddd);
