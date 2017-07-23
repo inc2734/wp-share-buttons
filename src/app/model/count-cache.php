@@ -1,6 +1,6 @@
 <?php
 /**
- * @package inc2734/wp-vshare-buttons
+ * @package inc2734/wp-share-buttons
  * @author inc2734
  * @license GPL-2.0+
  */
