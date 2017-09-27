@@ -87,6 +87,7 @@
       margin-right: 5px;
       line-height: 16px;
       padding: 1px 7px 1px 5px;
+      min-height: 23px;
     }
 
     @each $name, $values in $icons {
