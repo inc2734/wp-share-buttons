@@ -1,4 +1,11 @@
-<div id="wp-share-buttons-<?php esc_attr( $post_id ) ?>" class="wp-share-buttons wp-share-buttons--<?php echo esc_attr( $type ); ?>">
+<?php
+/**
+ * @package inc2734/wp-share-buttons
+ * @author inc2734
+ * @license GPL-2.0+
+ */
+?>
+<div id="wp-share-buttons-<?php echo esc_attr( $post_id ); ?>" class="wp-share-buttons wp-share-buttons--<?php echo esc_attr( $type ); ?>">
 	<ul class="wp-share-buttons__list">
 		<li class="wp-share-buttons__item">
 			[wp_share_buttons_facebook type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]

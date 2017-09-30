@@ -10,7 +10,14 @@
  */
 class Inc2734_WP_Share_Buttons_Count_Cache {
 
+	/**
+	 * @var int
+	 */
 	protected $post_id;
+
+	/**
+	 * @var string
+	 */
 	protected $service_name;
 
 	/**

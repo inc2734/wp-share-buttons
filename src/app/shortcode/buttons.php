@@ -5,6 +5,9 @@
  * @license GPL-2.0+
  */
 
+/**
+ * Abstract share buttons
+ */
 class Inc2734_WP_Share_Buttons_Shortcode_Buttons extends Inc2734_WP_Share_Buttons_Abstract_Shortcode {
 
 	public function _shortcode( $attributes ) {

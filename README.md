@@ -19,11 +19,11 @@ $ composer require inc2734/wp-share-buttons
 ```
 <?php
 // When Using composer auto loader
-// new Inc2734\WP_Share_Buttons\Share_Buttons();
+new Inc2734\WP_Share_Buttons\Share_Buttons();
 
 // When not Using composer auto loader
-include_once( get_theme_file_path( '/vendor/inc2734/wp-share-buttons/src/wp-share-buttons.php' ) );
-new Inc2734_WP_Share_Buttons();
+// include_once( get_theme_file_path( '/vendor/inc2734/wp-share-buttons/src/wp-share-buttons.php' ) );
+// new Inc2734_WP_Share_Buttons();
 ```
 
 ```

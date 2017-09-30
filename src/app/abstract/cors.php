@@ -41,7 +41,7 @@ abstract class Inc2734_WP_Share_Buttons_Abstract_CORS {
 			array(
 				'endpoint'    => admin_url( 'admin-ajax.php' ),
 				'action'      => 'inc2734_wp_share_buttons_' . $this->service_name,
-				'_ajax_nonce' => wp_create_nonce( 'inc2734_wp_share_buttons_' . $this->service_name )
+				'_ajax_nonce' => wp_create_nonce( 'inc2734_wp_share_buttons_' . $this->service_name ),
 			)
 		);
 	}
@@ -50,8 +50,10 @@ abstract class Inc2734_WP_Share_Buttons_Abstract_CORS {
 	 * Ajax
 	 *
 	 * @return void
+	 * @SuppressWarnings(PHPMD.UnusedLocalVariable)
 	 */
 	public function _ajax() {
+		// @todo It does not move if it is erased ...
 		global $post;
 
 		check_ajax_referer( 'inc2734_wp_share_buttons_' . $this->service_name );
@@ -85,7 +87,9 @@ abstract class Inc2734_WP_Share_Buttons_Abstract_CORS {
 		if ( ! preg_match( '/^[\d\-]+$/', $count ) ) {
 			$count = 0;
 		}
-		wp_send_json( [ 'count' => $count ] );
+		wp_send_json( [
+			'count' => $count,
+		] );
 	}
 
 	/**

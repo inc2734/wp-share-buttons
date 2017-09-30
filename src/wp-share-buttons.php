@@ -5,6 +5,9 @@
  * @license GPL-2.0+
  */
 
+/**
+ * Added share buttons
+ */
 class Inc2734_WP_Share_Buttons {
 
 	public function __construct() {
@@ -23,7 +26,7 @@ class Inc2734_WP_Share_Buttons {
 		}
 
 		new Inc2734_WP_Share_Buttons_Facebook( 'facebook' );
-		new Inc2734_WP_Share_Buttons_Shortcode_Facebook( 'wp_share_buttons_facebook');
+		new Inc2734_WP_Share_Buttons_Shortcode_Facebook( 'wp_share_buttons_facebook' );
 
 		new Inc2734_WP_Share_Buttons_Twitter( 'twitter' );
 		new Inc2734_WP_Share_Buttons_Shortcode_Twitter( 'wp_share_buttons_twitter' );

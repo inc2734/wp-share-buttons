@@ -1,4 +1,10 @@
 <?php
+/**
+ * @package inc2734/wp-share-buttons
+ * @author inc2734
+ * @license GPL-2.0+
+ */
+
 $fb_locale = 'en_US';
 if ( 'ja' === get_locale() ) {
 	$fb_locale = 'ja_JP';
