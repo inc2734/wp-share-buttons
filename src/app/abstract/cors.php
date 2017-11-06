@@ -104,15 +104,13 @@ abstract class Inc2734_WP_Share_Buttons_Abstract_CORS {
 
 		$permalink = get_permalink( $_GET['post_id'] );
 
-		if ( false !== strpos( $permalink, 'https://' ) ) {
-			$permalink = rawurlencode( $permalink );
-			$count = $this->_get_count( $permalink );
-			if ( apply_filters( 'inc2734_wp_share_buttons_apply_https_total_count', true ) ) {
-				$count += $this->_get_count( str_replace( 'https://', 'http://', $permalink ) );
-			}
+		if ( false === strpos( $permalink, 'https://' ) || 0 < strpos( $permalink, 'https://' ) ) {
+			$count = $this->_get_count( rawurlencode( $permalink ) );
 		} else {
-			$permalink = rawurlencode( $permalink );
-			$count = $this->_get_count( $permalink );
+			$count = $this->_get_count( rawurlencode( $permalink ) );
+			if ( apply_filters( 'inc2734_wp_share_buttons_apply_https_total_count', true ) ) {
+				$count += $this->_get_count( rawurlencode( str_replace( 'https://', 'http://', $permalink ) ) );
+			}
 		}
 
 		return $count;
