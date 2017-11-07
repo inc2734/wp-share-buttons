@@ -24,7 +24,7 @@ abstract class Inc2734_WP_Share_Buttons_Abstract_CORS {
 
 		add_action( 'after_setup_theme', function() {
 			add_action( 'wp_enqueue_scripts', array( $this, '_add_localize_script' ) );
-			add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name       , array( $this, '_ajax' ) );
+			add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, array( $this, '_ajax' ) );
 			add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, array( $this, '_ajax' ) );
 		} );
 	}
