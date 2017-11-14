@@ -199,3 +199,16 @@ add_filter( 'inc2734_wp_share_buttons_twitter_label', function( $label ) {
   return 'Tweet';
 } );
 ```
+
+### inc2734_wp_share_buttons_localize_script_handle
+```
+/**
+ * Set handle of localize_script
+ *
+ * @param  {string} $handle
+ * @return {string}
+ */
+add_filter( 'inc2734_wp_share_buttons_localize_script_handle', function( $handle ) {
+  return $handle;
+} );
+```

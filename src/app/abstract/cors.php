@@ -35,8 +35,14 @@ abstract class Inc2734_WP_Share_Buttons_Abstract_CORS {
 	 * @return void
 	 */
 	public function _add_localize_script() {
+		$handle = get_template();
+		if ( ! wp_script_is( get_template() ) && wp_script_is( get_stylesheet() ) ) {
+			$handle = get_stylesheet();
+		}
+		$handle = apply_filters( 'inc2734_wp_share_buttons_localize_script_handle', $handle );
+
 		wp_localize_script(
-			get_stylesheet(),
+			$handle,
 			'inc2734_wp_share_buttons_' . $this->service_name,
 			array(
 				'endpoint'    => admin_url( 'admin-ajax.php' ),
