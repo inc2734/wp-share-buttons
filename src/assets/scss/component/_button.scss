@@ -190,12 +190,21 @@
   }
 }
 
+.pocket-btn {
+  .wp-share-buttons--official & {
+    margin-right: -3px;
+    margin-left: -3px;
+  }
+}
+
 .wp-share-button--feed.wp-share-button--official {
   @extend .wp-share-button--horizontal;
   .wp-share-button__button {
     background-color: nth(map-get($icons, 'feed'), 1);
     border-color: nth(map-get($icons, 'feed'), 1);
     color: #fff;
+    height: 20px;
+    min-height: auto;
   }
   .wp-share-button__icon {
     color: #fff;
