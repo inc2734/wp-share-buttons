@@ -16,12 +16,8 @@ if ( 'ja' === get_locale() ) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/<?php echo esc_js( $fb_locale ); ?>/sdk.js#xfbml=1&version=v2.7&appId=260089250777871";
+  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-share-button" data-href="<?php the_permalink( $post_id ); ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-	<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink( $post_id ); ?>">
-		<?php esc_html_e( 'Share', 'inc2734-wp-share-buttons' ); ?>
-	</a>
-</div>
+<div class="fb-like" data-href="<?php the_permalink( $post_id ); ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
