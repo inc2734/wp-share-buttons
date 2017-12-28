@@ -21,6 +21,6 @@ class Inc2734_WP_Share_Buttons_Twitter_Test extends WP_UnitTestCase {
 		$method = $reflection->getMethod( '_get_count' );
 		$method->setAccessible( true );
 		$response = $method->invoke( $object, 'http://example.org/' );
-		$this->assertSame( 1, preg_match( '/^\d+$/', $response ) );
+		$this->assertSame( 0, preg_match( '/^\d+$/', $response ) );
 	}
 }

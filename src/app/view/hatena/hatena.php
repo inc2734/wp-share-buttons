@@ -9,6 +9,7 @@
 	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--hatena"
 	data-wp-share-buttons-postid="<?php echo esc_attr( $post_id ); ?>"
 	data-wp-share-buttons-has-cache="<?php echo esc_attr( $has_cache ); ?>"
+	data-wp-share-buttons-cache-expiration="<?php echo esc_attr( $expiration ); ?>"
 >
 	<?php if ( 'icon' !== $type ) : ?>
 		<div class="wp-share-button__count">

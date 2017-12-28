@@ -42,6 +42,18 @@ class Inc2734_WP_Share_Buttons_Count_Cache {
 	}
 
 	/**
+	 * Return count cache
+	 *
+	 * @return null|int
+	 */
+	public function get_cache_expiration() {
+		$cache = get_post_meta( $this->post_id, '_inc2734_count_cache_' . $this->service_name, true );
+		if ( ! empty( $cache['expiration'] ) ) {
+			return date_i18n( 'm-d-Y H:i:s', $cache['expiration'] );
+		}
+	}
+
+	/**
 	 * Return true when have count cache
 	 *
 	 * @return bool

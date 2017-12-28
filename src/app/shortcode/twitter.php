@@ -29,15 +29,17 @@ class Inc2734_WP_Share_Buttons_Shortcode_Twitter extends Inc2734_WP_Share_Button
 
 		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( $attributes['post_id'], 'twitter' );
 		$has_cache   = $count_cache->is_enabled();
+		$expiration  = $count_cache->get_cache_expiration();
 		$cache       = $count_cache->get();
 		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
 
 		return $this->render( 'twitter/' . $file, array(
-			'type'      => $attributes['type'],
-			'title'     => $attributes['title'],
-			'post_id'   => $attributes['post_id'],
-			'has_cache' => $has_cache,
-			'count'     => $count,
+			'type'       => $attributes['type'],
+			'title'      => $attributes['title'],
+			'post_id'    => $attributes['post_id'],
+			'has_cache'  => $has_cache,
+			'expiration' => $expiration,
+			'count'      => $count,
 		) );
 	}
 }

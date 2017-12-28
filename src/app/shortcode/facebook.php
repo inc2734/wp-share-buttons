@@ -28,14 +28,16 @@ class Inc2734_WP_Share_Buttons_Shortcode_Facebook extends Inc2734_WP_Share_Butto
 
 		$count_cache = new Inc2734_WP_Share_Buttons_Count_Cache( $attributes['post_id'], 'facebook' );
 		$has_cache   = $count_cache->is_enabled();
+		$expiration  = $count_cache->get_cache_expiration();
 		$cache       = $count_cache->get();
 		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
 
 		return $this->render( 'facebook/' . $file, array(
-			'type'      => $attributes['type'],
-			'post_id'   => $attributes['post_id'],
-			'has_cache' => $has_cache,
-			'count'     => $count,
+			'type'       => $attributes['type'],
+			'post_id'    => $attributes['post_id'],
+			'has_cache'  => $has_cache,
+			'expiration' => $expiration,
+			'count'      => $count,
 		) );
 	}
 }

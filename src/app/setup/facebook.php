@@ -17,9 +17,14 @@ class Inc2734_WP_Share_Buttons_Facebook extends Inc2734_WP_Share_Buttons_Abstrac
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
-		$response  = wp_remote_get( "https://graph.facebook.com/?id=$permalink" );
+		$request   = "https://graph.facebook.com/?id=$permalink";
+		$response  = wp_remote_get( $request );
 		$body = wp_remote_retrieve_body( $response );
 		$body = json_decode( $body, true );
+
+		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
+			error_log( '[WP Share Buttons] Facebook request / ' . $request . ' / ' . json_encode( $body ) );
+		}
 
 		if ( ! is_array( $body ) ) {
 			return '-';

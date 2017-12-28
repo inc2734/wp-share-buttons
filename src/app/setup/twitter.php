@@ -17,9 +17,14 @@ class Inc2734_WP_Share_Buttons_Twitter extends Inc2734_WP_Share_Buttons_Abstract
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
-		$response  = wp_remote_get( "https://opensharecount.com/count.json?url=$permalink" );
+		$request   = "https://opensharecount.com/count.json?url=$permalink";
+		$response  = wp_remote_get( $request );
 		$body = wp_remote_retrieve_body( $response );
 		$body = json_decode( $body, true );
+
+		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
+			error_log( '[WP Share Buttons] Twitter request / ' . $request . ' / ' . json_encode( $body ) );
+		}
 
 		if ( ! is_array( $body ) ) {
 			return '-';
