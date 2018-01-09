@@ -7,7 +7,29 @@
 
 namespace Inc2734\WP_Share_Buttons;
 
-include_once( __DIR__ . '/wp-share-buttons.php' );
+use Inc2734\WP_Share_Buttons\Model\Request;
+use Inc2734\WP_Share_Buttons\Controller;
 
-class Share_Buttons extends \Inc2734_WP_Share_Buttons {
+class Share_Buttons {
+
+	public function __construct() {
+		load_textdomain( 'inc2734-wp-share-buttons', __DIR__ . '/languages/' . get_locale() . '.mo' );
+
+		new Request\Facebook( 'facebook' );
+		new Controller\Facebook( 'wp_share_buttons_facebook' );
+
+		new Request\Twitter( 'twitter' );
+		new Controller\Twitter( 'wp_share_buttons_twitter' );
+
+		new Request\Hatena( 'hatena' );
+		new Controller\Hatena( 'wp_share_buttons_hatena' );
+
+		new Request\Feedly( 'feedly' );
+		new Controller\Feedly( 'wp_share_buttons_feedly' );
+
+		new Controller\Line( 'wp_share_buttons_line' );
+		new Controller\Pocket( 'wp_share_buttons_pocket' );
+		new Controller\Feed( 'wp_share_buttons_feed' );
+		new Controller\Buttons( 'wp_share_buttons' );
+	}
 }
