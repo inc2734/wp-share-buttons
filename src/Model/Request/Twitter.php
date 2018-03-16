@@ -37,7 +37,9 @@ class Twitter extends Request {
 		}
 
 		if ( isset( $body['error'] ) ) {
-			error_log( get_stylesheet() . ': ' . $body['error'] );
+			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
+				error_log( get_stylesheet() . ': ' . $body['error'] );
+			}
 		}
 
 		return $body['count'];
