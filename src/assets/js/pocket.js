@@ -2,7 +2,6 @@
 
 import $ from 'jquery';
 import Inc2734_WP_Share_Buttons_Button from './button.js';
-import Inc2734_WP_Share_Buttons_Share_Count from './share-count.js';
 import Inc2734_WP_Share_Buttons_Popup from './popup.js';
 
 export default class Inc2734_WP_Share_Buttons_Pocket extends Inc2734_WP_Share_Buttons_Button {

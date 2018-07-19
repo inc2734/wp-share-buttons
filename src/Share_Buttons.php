@@ -10,6 +10,9 @@ namespace Inc2734\WP_Share_Buttons;
 use Inc2734\WP_Share_Buttons\Model\Request;
 use Inc2734\WP_Share_Buttons\Controller;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ */
 class Share_Buttons {
 
 	public function __construct() {
@@ -27,6 +30,7 @@ class Share_Buttons {
 		new Request\Feedly( 'feedly' );
 		new Controller\Feedly( 'wp_share_buttons_feedly' );
 
+		new Controller\GooglePlus( 'wp_share_buttons_google_plus' );
 		new Controller\Line( 'wp_share_buttons_line' );
 		new Controller\Pocket( 'wp_share_buttons_pocket' );
 		new Controller\Feed( 'wp_share_buttons_feed' );
