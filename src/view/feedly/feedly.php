@@ -16,7 +16,7 @@
 			<?php echo esc_html( $count ); ?>
 		</div>
 	<?php endif; ?>
-	<a class="wp-share-button__button" href="https://cloud.feedly.com/#subscription/feed/<?php echo esc_attr( urlencode( get_bloginfo( 'rss2_url' ) ) ); ?>" target="_blank">
+	<a class="wp-share-button__button" href="https://feedly.com/i/subscription/feed/<?php echo esc_attr( urlencode( get_bloginfo( 'rss2_url' ) ) ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--feedly"></span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Feedly', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
