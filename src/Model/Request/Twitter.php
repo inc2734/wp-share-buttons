@@ -19,8 +19,8 @@ class Twitter extends Request {
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
-		$request   = "https://opensharecount.com/count.json?url=$permalink";
-		$response  = wp_remote_get( $request );
+		$request  = "https://opensharecount.com/count.json?url=$permalink";
+		$response = wp_remote_get( $request );
 		$body = wp_remote_retrieve_body( $response );
 		$body = json_decode( $body, true );
 

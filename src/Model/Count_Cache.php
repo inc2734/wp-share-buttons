@@ -38,7 +38,7 @@ class Count_Cache {
 	 */
 	public function get() {
 		$cache = get_post_meta( $this->post_id, '_inc2734_count_cache_' . $this->service_name, true );
-		if ( $cache && time() <= $cache['expiration'] ) {
+		if ( '' !== $cache && time() <= $cache['expiration'] ) {
 			return $cache['count'];
 		}
 	}

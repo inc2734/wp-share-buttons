@@ -30,11 +30,17 @@ class Facebook extends Controller {
 			$file = 'facebook';
 		}
 
-		$count_cache = new Model\Count_Cache( $attributes['post_id'], 'facebook' );
-		$has_cache   = $count_cache->is_enabled();
-		$expiration  = $count_cache->get_cache_expiration();
-		$cache       = $count_cache->get();
-		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
+		if ( function_exists( 'scc_get_share_facebook' ) ) {
+			$has_cache  = true;
+			$expiration = null;
+			$count      = scc_get_share_facebook();
+		} else {
+			$count_cache = new Model\Count_Cache( $attributes['post_id'], 'facebook' );
+			$has_cache   = $count_cache->is_enabled();
+			$expiration  = $count_cache->get_cache_expiration();
+			$cache       = $count_cache->get();
+			$count       = ( ! is_null( $cache ) ) ? $cache : '-';
+		}
 
 		return $this->render( 'facebook/' . $file, [
 			'type'       => $attributes['type'],

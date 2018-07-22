@@ -19,8 +19,8 @@ class Hatena extends Request {
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
-		$request   = "https://b.hatena.ne.jp/entry.count?url=$permalink";
-		$response  = wp_remote_get( $request );
+		$request  = "https://b.hatena.ne.jp/entry.count?url=$permalink";
+		$response = wp_remote_get( $request );
 		$body = wp_remote_retrieve_body( $response );
 
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {

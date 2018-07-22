@@ -30,11 +30,17 @@ class Hatena extends Controller {
 			$file = 'hatena';
 		}
 
-		$count_cache = new Model\Count_Cache( $attributes['post_id'], 'hatena' );
-		$has_cache   = $count_cache->is_enabled();
-		$expiration  = $count_cache->get_cache_expiration();
-		$cache       = $count_cache->get();
-		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
+		if ( function_exists( 'scc_get_share_hatebu' ) ) {
+			$has_cache  = true;
+			$expiration = null;
+			$count      = scc_get_share_hatebu();
+		} else {
+			$count_cache = new Model\Count_Cache( $attributes['post_id'], 'hatena' );
+			$has_cache   = $count_cache->is_enabled();
+			$expiration  = $count_cache->get_cache_expiration();
+			$cache       = $count_cache->get();
+			$count       = ( ! is_null( $cache ) ) ? $cache : '-';
+		}
 
 		return $this->render( 'hatena/' . $file, [
 			'type'       => $attributes['type'],

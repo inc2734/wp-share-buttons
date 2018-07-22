@@ -30,11 +30,17 @@ class Feedly extends Controller {
 			$file = 'feedly';
 		}
 
-		$count_cache = new Model\Count_Cache( $attributes['post_id'], 'feedly' );
-		$has_cache   = $count_cache->is_enabled();
-		$expiration  = $count_cache->get_cache_expiration();
-		$cache       = $count_cache->get();
-		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
+		if ( function_exists( 'scc_get_follow_feedly' ) ) {
+			$has_cache  = true;
+			$expiration = null;
+			$count      = scc_get_follow_feedly();
+		} else {
+			$count_cache = new Model\Count_Cache( $attributes['post_id'], 'feedly' );
+			$has_cache   = $count_cache->is_enabled();
+			$expiration  = $count_cache->get_cache_expiration();
+			$cache       = $count_cache->get();
+			$count       = ( ! is_null( $cache ) ) ? $cache : '-';
+		}
 
 		return $this->render( 'feedly/' . $file, [
 			'type'       => $attributes['type'],

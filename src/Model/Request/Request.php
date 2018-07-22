@@ -33,6 +33,10 @@ abstract class Request {
 		} );
 	}
 
+	protected function _get_nonce_key() {
+		return 'inc2734_wp_share_buttons_' . $this->service_name;
+	}
+
 	/**
 	 * Setup localize script
 	 *
@@ -51,7 +55,7 @@ abstract class Request {
 			[
 				'endpoint'    => admin_url( 'admin-ajax.php' ),
 				'action'      => 'inc2734_wp_share_buttons_' . $this->service_name,
-				'_ajax_nonce' => wp_create_nonce( 'inc2734_wp_share_buttons_' . $this->service_name ),
+				'_ajax_nonce' => wp_create_nonce( $this->_get_nonce_key() ),
 			]
 		);
 	}
@@ -66,7 +70,7 @@ abstract class Request {
 		// @todo It does not move if it is erased ...
 		global $post;
 
-		check_ajax_referer( 'inc2734_wp_share_buttons_' . $this->service_name );
+		check_ajax_referer( $this->_get_nonce_key() );
 
 		if ( ! isset( $_GET['post_id'] ) ) {
 			$this->_send_json( '-' );
@@ -94,9 +98,10 @@ abstract class Request {
 	 * @return json
 	 */
 	protected function _send_json( $count ) {
-		if ( ! preg_match( '/^[\d\-]+$/', $count ) ) {
-			$count = 0;
+		if ( ! is_numeric( $count ) ) {
+			$count = '-';
 		}
+
 		wp_send_json( [
 			'count' => $count,
 		] );
@@ -113,17 +118,44 @@ abstract class Request {
 		}
 
 		$permalink = get_permalink( $_GET['post_id'] );
+		if ( ! $permalink ) {
+			return '-';
+		}
 
-		if ( false === strpos( $permalink, 'https://' ) || 0 < strpos( $permalink, 'https://' ) ) {
+		if ( 0 === strpos( $permalink, 'http://' ) ) {
 			$count = $this->_get_count( rawurlencode( $permalink ) );
-		} else {
+		} elseif ( 0 === strpos( $permalink, 'https://' ) ) {
 			$count = $this->_get_count( rawurlencode( $permalink ) );
 			if ( apply_filters( 'inc2734_wp_share_buttons_apply_https_total_count', true ) ) {
-				$count += $this->_get_count( rawurlencode( str_replace( 'https://', 'http://', $permalink ) ) );
+				$https_count = $count;
+				$http_count  = $this->_get_count( rawurlencode( str_replace( 'https://', 'http://', $permalink ) ) );
+				$count       = $this->_add( $https_count, $http_count );
 			}
 		}
 
+		if ( ! is_numeric( $count ) ) {
+			return '-';
+		}
+
 		return $count;
+	}
+
+	/**
+	 * Add count
+	 *
+	 * @param int|- $a
+	 * @param int|- $b
+	 */
+	protected function _add( $arg1, $arg2 ) {
+		if ( is_numeric( $arg1 ) && is_numeric( $arg2 ) ) {
+			return $arg1 + $arg2;
+		} elseif ( is_numeric( $arg2 ) ) {
+			return $arg1;
+		} elseif ( is_numeric( $arg2 ) ) {
+			return $arg2;
+		}
+
+		return '-';
 	}
 
 	/**

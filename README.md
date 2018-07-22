@@ -8,6 +8,8 @@ This library adds share button shortcodes for WordPress.
 This buttons display to sum http and https counts.
 And, It works lightly with asynchronous display and caching.
 
+When SNS Count Cache plugin is activated WP Share Buttons uses that counts.
+
 This buttons can use for singular pages.
 
 ## Install

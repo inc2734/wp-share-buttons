@@ -31,11 +31,17 @@ class Twitter extends Controller {
 			$file = 'twitter';
 		}
 
-		$count_cache = new Model\Count_Cache( $attributes['post_id'], 'twitter' );
-		$has_cache   = $count_cache->is_enabled();
-		$expiration  = $count_cache->get_cache_expiration();
-		$cache       = $count_cache->get();
-		$count       = ( ! is_null( $cache ) ) ? $cache : 0;
+		if ( function_exists( 'scc_get_share_twitter' ) ) {
+			$has_cache  = true;
+			$expiration = null;
+			$count      = scc_get_share_twitter();
+		} else {
+			$count_cache = new Model\Count_Cache( $attributes['post_id'], 'twitter' );
+			$has_cache   = $count_cache->is_enabled();
+			$expiration  = $count_cache->get_cache_expiration();
+			$cache       = $count_cache->get();
+			$count       = ( ! is_null( $cache ) ) ? $cache : '-';
+		}
 
 		return $this->render( 'twitter/' . $file, [
 			'type'       => $attributes['type'],
