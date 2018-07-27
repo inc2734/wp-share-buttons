@@ -77,7 +77,7 @@ abstract class Request {
 			return;
 		}
 
-		$post_id = $_GET['post_id'];
+		$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
 		$count_cache = new Model\Count_Cache( $post_id, $this->service_name );
 
 		$cache = $count_cache->get();
@@ -117,7 +117,7 @@ abstract class Request {
 			return '-';
 		}
 
-		$permalink = get_permalink( $_GET['post_id'] );
+		$permalink = get_permalink( sanitize_text_field( wp_unslash( $_GET['post_id'] ) ) );
 		if ( ! $permalink ) {
 			return '-';
 		}
