@@ -35,5 +35,66 @@ class Share_Buttons {
 		new Controller\Pocket( 'wp_share_buttons_pocket' );
 		new Controller\Feed( 'wp_share_buttons_feed' );
 		new Controller\Buttons( 'wp_share_buttons' );
+
+		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_styles' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, '_enqueue_styles' ] );
+		add_action( 'after_setup_theme', [ $this, '_add_editor_style' ] );
+	}
+
+	/**
+	 * Enqueue scripts
+	 *
+	 * @return void
+	 */
+	public function _enqueue_scripts() {
+		$relative_path = '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.min.js';
+		$src  = get_template_directory_uri() . $relative_path;
+		$path = get_template_directory() . $relative_path;
+
+		if ( ! file_exists( $path ) ) {
+			return;
+		}
+
+		wp_enqueue_script(
+			'wp-share-buttons',
+			$src,
+			[ 'jquery' ],
+			filemtime( $path ),
+			true
+		);
+	}
+
+	/**
+	 * Enqueue styles
+	 *
+	 * @return void
+	 */
+	public function _enqueue_styles() {
+		$relative_path = '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css';
+		$src  = get_template_directory_uri() . $relative_path;
+		$path = get_template_directory() . $relative_path;
+
+		if ( ! file_exists( $path ) ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'wp-share-buttons',
+			$src,
+			[],
+			filemtime( $path )
+		);
+	}
+
+	/**
+	 * Add editor style
+	 *
+	 * @return void
+	 */
+	public function _add_editor_style() {
+		add_editor_style( [
+			'vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css',
+		] );
 	}
 }

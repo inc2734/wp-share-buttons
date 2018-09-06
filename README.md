@@ -24,17 +24,6 @@ $ composer require inc2734/wp-share-buttons
 new Inc2734\WP_Share_Buttons\Share_Buttons();
 ```
 
-```
-// Using default styles (.scss)
-@import 'vendor/inc2734/wp-share-buttons/src/assets/scss/wp-share-buttons';
-```
-
-```
-// Setup js
-import Inc2734_WP_Share_Buttons from 'vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.js';
-new Inc2734_WP_Share_Buttons();
-```
-
 ## Shortcodes
 ### All buttons
 ```

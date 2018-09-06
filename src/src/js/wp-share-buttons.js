@@ -1,13 +1,13 @@
 'use strict';
 
 import $ from 'jquery';
-import Inc2734_WP_Share_Buttons_Facebook from './facebook.js';
-import Inc2734_WP_Share_Buttons_Twitter from './twitter.js';
-import Inc2734_WP_Share_Buttons_Hatena from './hatena.js';
-import Inc2734_WP_Share_Buttons_GooglePlus from './google-plus.js';
-import Inc2734_WP_Share_Buttons_Line from './line.js';
-import Inc2734_WP_Share_Buttons_Pocket from './pocket.js';
-import Inc2734_WP_Share_Buttons_Feedly from './feedly.js';
+import Inc2734_WP_Share_Buttons_Facebook from './_facebook.js';
+import Inc2734_WP_Share_Buttons_Twitter from './_twitter.js';
+import Inc2734_WP_Share_Buttons_Hatena from './_hatena.js';
+import Inc2734_WP_Share_Buttons_GooglePlus from './_google-plus.js';
+import Inc2734_WP_Share_Buttons_Line from './_line.js';
+import Inc2734_WP_Share_Buttons_Pocket from './_pocket.js';
+import Inc2734_WP_Share_Buttons_Feedly from './_feedly.js';
 
 export default class Inc2734_WP_Share_Buttons {
   constructor() {
