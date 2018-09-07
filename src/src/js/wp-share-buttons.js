@@ -42,3 +42,5 @@ export default class Inc2734_WP_Share_Buttons {
     });
   }
 }
+
+new Inc2734_WP_Share_Buttons();
