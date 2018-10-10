@@ -19,11 +19,14 @@ class Twitter extends Controller {
 			return;
 		}
 
-		$attributes = shortcode_atts( [
-			'type'    => 'balloon',
-			'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
-			'post_id' => '',
-		], $attributes );
+		$attributes = shortcode_atts(
+			[
+				'type'    => 'balloon',
+				'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
+				'post_id' => '',
+			],
+			$attributes
+		);
 
 		if ( 'official' === $attributes['type'] ) {
 			$file = 'official';
@@ -43,13 +46,16 @@ class Twitter extends Controller {
 			$count       = ( ! is_null( $cache ) ) ? $cache : '-';
 		}
 
-		return $this->render( 'twitter/' . $file, [
-			'type'       => $attributes['type'],
-			'title'      => $attributes['title'],
-			'post_id'    => $attributes['post_id'],
-			'has_cache'  => $has_cache,
-			'expiration' => $expiration,
-			'count'      => $count,
-		] );
+		return $this->render(
+			'twitter/' . $file,
+			[
+				'type'       => $attributes['type'],
+				'title'      => $attributes['title'],
+				'post_id'    => $attributes['post_id'],
+				'has_cache'  => $has_cache,
+				'expiration' => $expiration,
+				'count'      => $count,
+			]
+		);
 	}
 }

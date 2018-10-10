@@ -19,10 +19,13 @@ class Facebook extends Controller {
 			return;
 		}
 
-		$attributes = shortcode_atts( [
-			'type'    => 'balloon',
-			'post_id' => '',
-		], $attributes );
+		$attributes = shortcode_atts(
+			[
+				'type'    => 'balloon',
+				'post_id' => '',
+			],
+			$attributes
+		);
 
 		if ( 'official' === $attributes['type'] ) {
 			$file = 'official';
@@ -42,12 +45,15 @@ class Facebook extends Controller {
 			$count       = ( ! is_null( $cache ) ) ? $cache : '-';
 		}
 
-		return $this->render( 'facebook/' . $file, [
-			'type'       => $attributes['type'],
-			'post_id'    => $attributes['post_id'],
-			'has_cache'  => $has_cache,
-			'expiration' => $expiration,
-			'count'      => $count,
-		] );
+		return $this->render(
+			'facebook/' . $file,
+			[
+				'type'       => $attributes['type'],
+				'post_id'    => $attributes['post_id'],
+				'has_cache'  => $has_cache,
+				'expiration' => $expiration,
+				'count'      => $count,
+			]
+		);
 	}
 }

@@ -71,9 +71,13 @@ class Count_Cache {
 	 * @return bool
 	 */
 	public function update( $count ) {
-		update_post_meta( $this->post_id, '_inc2734_count_cache_' . $this->service_name, [
-			'count'      => $count,
-			'expiration' => time() + (int) apply_filters( 'inc2734_wp_share_buttons_count_cache_seconds', 60 * 5 ),
-		] );
+		update_post_meta(
+			$this->post_id,
+			'_inc2734_count_cache_' . $this->service_name,
+			[
+				'count'      => $count,
+				'expiration' => time() + (int) apply_filters( 'inc2734_wp_share_buttons_count_cache_seconds', 60 * 5 ),
+			]
+		);
 	}
 }

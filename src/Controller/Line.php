@@ -17,10 +17,13 @@ class Line extends Controller {
 			return;
 		}
 
-		$attributes = shortcode_atts( [
-			'type'    => 'balloon',
-			'post_id' => '',
-		], $attributes );
+		$attributes = shortcode_atts(
+			[
+				'type'    => 'balloon',
+				'post_id' => '',
+			],
+			$attributes
+		);
 
 		if ( 'official' === $attributes['type'] ) {
 			$file = 'official';
@@ -28,9 +31,12 @@ class Line extends Controller {
 			$file = 'line';
 		}
 
-		return $this->render( 'line/' . $file, [
-			'type'    => $attributes['type'],
-			'post_id' => $attributes['post_id'],
-		] );
+		return $this->render(
+			'line/' . $file,
+			[
+				'type'    => $attributes['type'],
+				'post_id' => $attributes['post_id'],
+			]
+		);
 	}
 }

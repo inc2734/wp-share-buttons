@@ -93,8 +93,10 @@ class Share_Buttons {
 	 * @return void
 	 */
 	public function _add_editor_style() {
-		add_editor_style( [
-			'vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css',
-		] );
+		add_editor_style(
+			[
+				'vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css',
+			]
+		);
 	}
 }

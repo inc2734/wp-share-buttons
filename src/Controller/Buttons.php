@@ -17,16 +17,24 @@ class Buttons extends Controller {
 			return;
 		}
 
-		$attributes = shortcode_atts( [
-			'type'    => 'balloon',
-			'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
-			'post_id' => '',
-		], $attributes );
+		$attributes = shortcode_atts(
+			[
+				'type'    => 'balloon',
+				'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
+				'post_id' => '',
+			],
+			$attributes
+		);
 
-		return do_shortcode( $this->render( 'buttons', [
-			'type'    => $attributes['type'],
-			'title'   => $attributes['title'],
-			'post_id' => $attributes['post_id'],
-		] ) );
+		return do_shortcode(
+			$this->render(
+				'buttons',
+				[
+					'type'    => $attributes['type'],
+					'title'   => $attributes['title'],
+					'post_id' => $attributes['post_id'],
+				]
+			)
+		);
 	}
 }

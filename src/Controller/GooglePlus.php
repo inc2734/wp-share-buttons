@@ -17,11 +17,14 @@ class GooglePlus extends Controller {
 			return;
 		}
 
-		$attributes = shortcode_atts( [
-			'type'    => 'balloon',
-			'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
-			'post_id' => '',
-		], $attributes );
+		$attributes = shortcode_atts(
+			[
+				'type'    => 'balloon',
+				'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
+				'post_id' => '',
+			],
+			$attributes
+		);
 
 		if ( 'official' === $attributes['type'] ) {
 			$file = 'official';
@@ -29,10 +32,13 @@ class GooglePlus extends Controller {
 			$file = 'google-plus';
 		}
 
-		return $this->render( 'google-plus/' . $file, [
-			'type'    => $attributes['type'],
-			'title'   => $attributes['title'],
-			'post_id' => $attributes['post_id'],
-		] );
+		return $this->render(
+			'google-plus/' . $file,
+			[
+				'type'    => $attributes['type'],
+				'title'   => $attributes['title'],
+				'post_id' => $attributes['post_id'],
+			]
+		);
 	}
 }

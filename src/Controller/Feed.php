@@ -17,14 +17,20 @@ class Feed extends Controller {
 			return;
 		}
 
-		$attributes = shortcode_atts( [
-			'type'    => 'balloon',
-			'post_id' => '',
-		], $attributes );
+		$attributes = shortcode_atts(
+			[
+				'type'    => 'balloon',
+				'post_id' => '',
+			],
+			$attributes
+		);
 
-		return $this->render( 'feed/feed', [
-			'type'    => $attributes['type'],
-			'post_id' => $attributes['post_id'],
-		] );
+		return $this->render(
+			'feed/feed',
+			[
+				'type'    => $attributes['type'],
+				'post_id' => $attributes['post_id'],
+			]
+		);
 	}
 }

@@ -26,11 +26,14 @@ abstract class Request {
 	public function __construct( $service_name ) {
 		$this->service_name = $service_name;
 
-		add_action( 'after_setup_theme', function() {
-			add_action( 'wp_enqueue_scripts', [ $this, '_add_localize_script' ] );
-			add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
-			add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
-		} );
+		add_action(
+			'after_setup_theme',
+			function() {
+				add_action( 'wp_enqueue_scripts', [ $this, '_add_localize_script' ] );
+				add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
+				add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
+			}
+		);
 	}
 
 	protected function _get_nonce_key() {
@@ -102,9 +105,11 @@ abstract class Request {
 			$count = '-';
 		}
 
-		wp_send_json( [
-			'count' => $count,
-		] );
+		wp_send_json(
+			[
+				'count' => $count,
+			]
+		);
 	}
 
 	/**
