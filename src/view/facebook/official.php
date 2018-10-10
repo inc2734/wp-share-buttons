@@ -26,7 +26,7 @@ if ( $ogp->get_app_id() ) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&<?php echo esc_js( http_build_query( $query_args ) ); ?>';
+  js.src = 'https://connect.facebook.net/<?php echo esc_js( $fb_locale ); ?>/sdk.js#xfbml=1&<?php echo esc_js( http_build_query( $query_args ) ); ?>';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
