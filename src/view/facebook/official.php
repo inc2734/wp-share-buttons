@@ -19,6 +19,8 @@ $query_args['version'] = 'v3.1';
 if ( $ogp->get_app_id() ) {
 	$query_args['appId'] = $ogp->get_app_id();
 }
+
+$data_share = apply_filters( 'inc2734_wp_share_buttons_facebook_official_button_share', 'false' );
 ?>
 
 <div id="fb-root"></div>
@@ -30,4 +32,4 @@ if ( $ogp->get_app_id() ) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-like" data-href="<?php echo esc_url( $ogp->get_url() ); ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+<div class="fb-like" data-href="<?php echo esc_url( $ogp->get_url() ); ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="<?php echo esc_attr( $data_share ); ?>"></div>
