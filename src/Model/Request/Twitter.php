@@ -40,6 +40,7 @@ class Twitter extends Request {
 			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 				error_log( get_stylesheet() . ': ' . $body['error'] );
 			}
+			return '-';
 		}
 
 		return $body['count'];

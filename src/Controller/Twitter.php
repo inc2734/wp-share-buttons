@@ -22,7 +22,7 @@ class Twitter extends Controller {
 		$attributes = shortcode_atts(
 			[
 				'type'    => 'balloon',
-				'title'   => get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ),
+				'title'   => strip_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) ),
 				'post_id' => '',
 			],
 			$attributes
