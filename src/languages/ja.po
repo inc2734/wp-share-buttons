@@ -4,44 +4,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: inc2734-wp-share-buttons\n"
 "Report-Msgid-Bugs-To: https://make.wordpress.org/polyglots/\n"
-"POT-Creation-Date: 2017-07-21 10:01+0900\n"
+"POT-Creation-Date: 2018-11-17 07:00:22+00:00\n"
+"PO-Revision-Date: 2018-11-17 16:01+0900\n"
+"Last-Translator: inc2734 <inc@2inc.org>\n"
+"Language-Team: Takashi Kitajima <inc@2inc.org>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-07-21 10:02+0900\n"
-"Language-Team: Takashi Kitajima <inc@2inc.org>\n"
-"X-Generator: Poedit 1.8.4\n"
-"Last-Translator: inc2734 <inc@2inc.org>\n"
+"X-Generator: Poedit 2.0.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ja_JP\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: app/view/facebook/facebook.php:13 app/view/facebook/official.php:19
+#: view/copy/copy.php:18
+msgid "Copy"
+msgstr "コピー"
+
+#: view/facebook/facebook.php:21
 msgid "Share"
 msgstr "シェア"
 
-#: app/view/feed/feed.php:9
+#: view/feed/feed.php:16
 msgid "Feed"
 msgstr "フィード"
 
-#: app/view/feedly/feedly.php:13 app/view/feedly/official.php:2
+#: view/feedly/feedly.php:21 view/feedly/official.php:9
 msgid "Feedly"
 msgstr "Feedly"
 
-#: app/view/hatena/hatena.php:13 app/view/hatena/official.php:9
-#: app/view/hatena/official.php:10
+#: view/google-plus/google-plus.php:16
+msgid "Google+"
+msgstr "Google+"
+
+#: view/hatena/hatena.php:21 view/hatena/official.php:15
+#: view/hatena/official.php:16
 msgid "Bookmark"
 msgstr "ブックマーク"
 
-#: app/view/line/line.php:9
+#: view/line/line.php:16
 msgid "LINE"
 msgstr "LINE"
 
-#: app/view/pocket/pocket.php:9
+#: view/pinterest/pinterest.php:16
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: view/pocket/pocket.php:16
 msgid "Pocket"
 msgstr "Pocket"
 
-#: app/view/twitter/official.php:1 app/view/twitter/twitter.php:13
+#: view/twitter/official.php:8 view/twitter/twitter.php:21
 msgid "Tweet"
 msgstr "ツイート"
