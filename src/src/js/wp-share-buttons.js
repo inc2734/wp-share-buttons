@@ -9,6 +9,7 @@ import Inc2734_WP_Share_Buttons_Line from './_line.js';
 import Inc2734_WP_Share_Buttons_Pocket from './_pocket.js';
 import Inc2734_WP_Share_Buttons_Pinterest from './_pinterest.js';
 import Inc2734_WP_Share_Buttons_Feedly from './_feedly.js';
+import Inc2734_WP_Share_Buttons_Copy from './_copy.js';
 
 export default class Inc2734_WP_Share_Buttons {
   constructor() {
@@ -43,6 +44,10 @@ export default class Inc2734_WP_Share_Buttons {
 
       $('.wp-share-button--feedly').each((i, e) => {
         new Inc2734_WP_Share_Buttons_Feedly($(e));
+      });
+
+      $('.wp-share-button--copy').each((i, e) => {
+        new Inc2734_WP_Share_Buttons_Copy($(e));
       });
     });
   }

@@ -74,6 +74,11 @@ When type is not official, buttons sums http and https counts.
 [wp_share_buttons_feed type="(Optional)" post_id="(Required)"]
 ```
 
+### Copy URL
+```
+[wp_share_buttons_copy type="(Optional)" title="(Optional)" post_id="(Required)"]
+```
+
 ## Filter hooks
 ### inc2734_wp_share_buttons_count_cache_seconds
 ```

@@ -35,6 +35,7 @@ class Share_Buttons {
 		new Controller\Pocket( 'wp_share_buttons_pocket' );
 		new Controller\Pinterest( 'wp_share_buttons_pinterest' );
 		new Controller\Feed( 'wp_share_buttons_feed' );
+		new Controller\Copy( 'wp_share_buttons_copy' );
 		new Controller\Buttons( 'wp_share_buttons' );
 
 		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_scripts' ] );

@@ -215,3 +215,20 @@
     font-weight: bold;
   }
 }
+
+.wp-share-button--copy.wp-share-button--official {
+  @extend .wp-share-button--horizontal;
+  .wp-share-button__button {
+    background-color: nth(map-get($icons, 'copy'), 1);
+    border-color: nth(map-get($icons, 'copy'), 1);
+    color: #fff;
+    height: 20px;
+    min-height: auto;
+  }
+  .wp-share-button__icon {
+    color: #fff;
+  }
+  .wp-share-button__label {
+    font-weight: bold;
+  }
+}
