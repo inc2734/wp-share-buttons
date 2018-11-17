@@ -45,6 +45,7 @@
     background-color: #f5f5f5;
     border-radius: 3px;
     color: #333;
+    cursor: pointer;
     font-family: Arial, sans-serif;
     font-size: 10px;
     letter-spacing: 0;
@@ -84,6 +85,10 @@
       color: #ff002d; }
       .wp-share-button__icon--pocket::before {
         content: ""; }
+    .wp-share-button__icon--pinterest {
+      color: #bb0f23; }
+      .wp-share-button__icon--pinterest::before {
+        content: ""; }
     .wp-share-button__icon--line {
       color: #00b900; }
       .wp-share-button__icon--line::before {
@@ -168,6 +173,10 @@
       margin-right: 0; }
     .wp-share-button--horizontal.wp-share-button--pocket .wp-share-button__count, .wp-share-button--pocket.wp-share-button--feed.wp-share-button--official .wp-share-button__count {
       display: none; }
+    .wp-share-button--horizontal.wp-share-button--pinterest .wp-share-button__button, .wp-share-button--pinterest.wp-share-button--feed.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--pinterest .wp-share-button__count, .wp-share-button--pinterest.wp-share-button--feed.wp-share-button--official .wp-share-button__count {
+      display: none; }
     .wp-share-button--horizontal.wp-share-button--line .wp-share-button__button, .wp-share-button--line.wp-share-button--feed.wp-share-button--official .wp-share-button__button {
       margin-right: 0; }
     .wp-share-button--horizontal.wp-share-button--line .wp-share-button__count, .wp-share-button--line.wp-share-button--feed.wp-share-button--official .wp-share-button__count {
@@ -195,6 +204,8 @@
     background-color: #6cc655; }
   .wp-share-button--icon.wp-share-button--pocket .wp-share-button__button {
     background-color: #ff002d; }
+  .wp-share-button--icon.wp-share-button--pinterest .wp-share-button__button {
+    background-color: #bb0f23; }
   .wp-share-button--icon.wp-share-button--line .wp-share-button__button {
     background-color: #00b900; }
   .wp-share-button--icon.wp-share-button--feed .wp-share-button__button {
@@ -241,6 +252,11 @@
       background-color: #ff002d;
       border-bottom: 5px solid #db0027; }
     .wp-share-button--block.wp-share-button--pocket .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block.wp-share-button--pinterest .wp-share-button__button {
+      background-color: #bb0f23;
+      border-bottom: 5px solid #9a0c1d; }
+    .wp-share-button--block.wp-share-button--pinterest .wp-share-button__count {
       display: none; }
     .wp-share-button--block.wp-share-button--line .wp-share-button__button {
       background-color: #00b900;

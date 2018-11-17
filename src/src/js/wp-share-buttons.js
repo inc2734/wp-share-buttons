@@ -7,6 +7,7 @@ import Inc2734_WP_Share_Buttons_Hatena from './_hatena.js';
 import Inc2734_WP_Share_Buttons_GooglePlus from './_google-plus.js';
 import Inc2734_WP_Share_Buttons_Line from './_line.js';
 import Inc2734_WP_Share_Buttons_Pocket from './_pocket.js';
+import Inc2734_WP_Share_Buttons_Pinterest from './_pinterest.js';
 import Inc2734_WP_Share_Buttons_Feedly from './_feedly.js';
 
 export default class Inc2734_WP_Share_Buttons {
@@ -34,6 +35,10 @@ export default class Inc2734_WP_Share_Buttons {
 
       $('.wp-share-button--pocket').each((i, e) => {
         new Inc2734_WP_Share_Buttons_Pocket($(e));
+      });
+
+      $('.wp-share-button--pinterest').each((i, e) => {
+        new Inc2734_WP_Share_Buttons_Pinterest($(e));
       });
 
       $('.wp-share-button--feedly').each((i, e) => {

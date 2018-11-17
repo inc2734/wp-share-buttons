@@ -33,6 +33,7 @@ class Share_Buttons {
 		new Controller\GooglePlus( 'wp_share_buttons_google_plus' );
 		new Controller\Line( 'wp_share_buttons_line' );
 		new Controller\Pocket( 'wp_share_buttons_pocket' );
+		new Controller\Pinterest( 'wp_share_buttons_pinterest' );
 		new Controller\Feed( 'wp_share_buttons_feed' );
 		new Controller\Buttons( 'wp_share_buttons' );
 

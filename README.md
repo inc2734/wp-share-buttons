@@ -59,6 +59,11 @@ When type is not official, buttons sums http and https counts.
 [wp_share_buttons_pocket type="(Optional)" title="(Optional)" post_id="(Required)"]
 ```
 
+### Pinterest
+```
+[wp_share_buttons_pinterest type="(Optional)"]
+```
+
 ### Line
 ```
 [wp_share_buttons_line type="(Optional)" post_id="(Required)"]
@@ -171,6 +176,19 @@ add_filter( 'inc2734_wp_share_buttons_line_label', function( $label ) {
  */
 add_filter( 'inc2734_wp_share_buttons_pocket_label', function( $label ) {
   return 'Pocket';
+} );
+```
+
+### inc2734_wp_share_buttons_pinterest_label
+```
+/**
+ * Set label of Pinterest button
+ *
+ * @param  {string} $label
+ * @return {string}
+ */
+add_filter( 'inc2734_wp_share_buttons_pinterest_label', function( $label ) {
+  return 'Pinterest';
 } );
 ```
 
