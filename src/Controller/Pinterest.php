@@ -19,7 +19,8 @@ class Pinterest extends Controller {
 
 		$attributes = shortcode_atts(
 			[
-				'type' => 'balloon',
+				'type'    => 'balloon',
+				'post_id' => '',
 			],
 			$attributes
 		);
@@ -33,7 +34,8 @@ class Pinterest extends Controller {
 		return $this->render(
 			'pinterest/' . $file,
 			[
-				'type' => $attributes['type'],
+				'type'    => $attributes['type'],
+				'post_id' => $attributes['post_id'],
 			]
 		);
 	}

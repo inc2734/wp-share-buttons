@@ -61,7 +61,7 @@ When type is not official, buttons sums http and https counts.
 
 ### Pinterest
 ```
-[wp_share_buttons_pinterest type="(Optional)"]
+[wp_share_buttons_pinterest type="(Optional)" post_id="(Required)"]
 ```
 
 ### Line

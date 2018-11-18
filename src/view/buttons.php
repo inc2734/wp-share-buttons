@@ -29,7 +29,7 @@
 			[wp_share_buttons_pocket type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>" title="<?php echo esc_attr( $title ); ?>"]
 		</li>
 		<li class="wp-share-buttons__item">
-			[wp_share_buttons_pinterest type="<?php echo esc_attr( $type ); ?>"]
+			[wp_share_buttons_pinterest type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]
 		</li>
 		<li class="wp-share-buttons__item">
 			[wp_share_buttons_feed type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]

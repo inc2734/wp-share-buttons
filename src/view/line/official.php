@@ -6,4 +6,4 @@
  */
 ?>
 <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="<?php the_permalink( $post_id ); ?>" style="display: none;"></div>
-<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"line-btn-js");</script>
+<script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"line-btn-js");</script>
