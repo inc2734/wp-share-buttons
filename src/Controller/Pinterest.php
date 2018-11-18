@@ -28,7 +28,7 @@ class Pinterest extends Controller {
 		if ( 'official' === $attributes['type'] ) {
 			$file = 'official';
 		} else {
-			$file = 'Pinterest';
+			$file = 'pinterest';
 		}
 
 		return $this->render(
