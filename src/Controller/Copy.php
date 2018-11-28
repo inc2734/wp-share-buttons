@@ -21,9 +21,10 @@ class Copy extends Controller {
 
 		$attributes = shortcode_atts(
 			[
-				'type'    => 'balloon',
-				'title'   => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'copy' ),
-				'post_id' => '',
+				'type'     => 'balloon',
+				'title'    => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'copy' ),
+				'post_id'  => '',
+				'hashtags' => apply_filters( 'inc2734_wp_share_buttons_shared_hashtags', '', 'copy' ),
 			],
 			$attributes
 		);
@@ -31,9 +32,10 @@ class Copy extends Controller {
 		return $this->render(
 			'copy/copy',
 			[
-				'type'    => $attributes['type'],
-				'title'   => $attributes['title'],
-				'post_id' => $attributes['post_id'],
+				'type'     => $attributes['type'],
+				'title'    => $attributes['title'],
+				'post_id'  => $attributes['post_id'],
+				'hashtags' => $attributes['hashtags'],
 			]
 		);
 	}

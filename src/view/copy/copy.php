@@ -9,6 +9,7 @@
 	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--copy"
 	data-title="<?php echo esc_attr( $title ); ?>"
 	data-url="<?php echo esc_attr( get_permalink( $post_id ) ); ?>"
+	data-hashtags="<?php echo esc_attr( $hashtags ); ?>"
 >
 	<?php if ( 'icon' !== $type ) : ?>
 		<div class="wp-share-button__count">-</div>

@@ -138,12 +138,29 @@ add_filter( 'inc2734_wp_share_buttons_facebook_official_button_share', function(
  * Customize shared title
  *
  * @param  {string} $title
- * @param  {string} $service
+ * @param  {string} $service twitter or copy
  * @return {string}
  */
 add_filter( 'inc2734_wp_share_buttons_shared_title', function( $title, $service ) {
   if ( 'twitter' === $service ) {
     return $title . ' #hashtag';
+  }
+  return $title;
+}, 10, 2 );
+```
+
+### inc2734_wp_share_buttons_shared_hashtags
+```
+/**
+ * Customize shared title
+ *
+ * @param  {string} $title
+ * @param  {string} $service twitter or copy
+ * @return {string}
+ */
+add_filter( 'inc2734_wp_share_buttons_shared_hashtags', function( $hashtags, $service ) {
+  if ( 'twitter' === $service ) {
+    return 'hashtagA,hashtagB';
   }
   return $title;
 }, 10, 2 );

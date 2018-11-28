@@ -23,9 +23,10 @@ class Twitter extends Controller {
 
 		$attributes = shortcode_atts(
 			[
-				'type'    => 'balloon',
-				'title'   => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'twitter' ),
-				'post_id' => '',
+				'type'     => 'balloon',
+				'title'    => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'twitter' ),
+				'post_id'  => '',
+				'hashtags' => apply_filters( 'inc2734_wp_share_buttons_shared_hashtags', '', 'twitter' ),
 			],
 			$attributes
 		);
@@ -54,6 +55,7 @@ class Twitter extends Controller {
 				'type'       => $attributes['type'],
 				'title'      => $attributes['title'],
 				'post_id'    => $attributes['post_id'],
+				'hashtags'   => $attributes['hashtags'],
 				'has_cache'  => $has_cache,
 				'expiration' => $expiration,
 				'count'      => $count,

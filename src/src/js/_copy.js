@@ -9,11 +9,21 @@ export default class Inc2734_WP_Share_Buttons_Copy {
         return;
       }
 
-      const text = button.attr('data-title');
+      const title = button.attr('data-title');
       const url = button.attr('data-url');
 
+      let hashtags = button.attr('data-hashtags');
+      if (hashtags) {
+        hashtags = hashtags.split(',');
+        for (let i = 0; i < hashtags.length; i++) {
+          hashtags[i] = `#${hashtags[i].trim()}`;
+        }
+        hashtags = hashtags.join(' ');
+      }
+
       const input = $('<input />');
-      input.val( `${text} ${url}` ).css({ position: 'fixed', top: '100%' });
+      const text = `${title} ${url} ${hashtags}`;
+      input.val( text.trim() ).css({ position: 'fixed', top: '100%' });
       input.appendTo('body');
       input.select();
 
