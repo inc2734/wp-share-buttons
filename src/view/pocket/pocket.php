@@ -11,7 +11,7 @@
 	<?php if ( 'icon' !== $type ) : ?>
 		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>
-	<a class="wp-share-button__button" href="https://getpocket.com/edit?url=<?php the_permalink( $post_id ); ?>&amp;title=<?php echo esc_attr( $title ); ?>" target="_blank">
+	<a class="wp-share-button__button" href="https://getpocket.com/edit?url=<?php the_permalink( $post_id ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--pocket"></span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Pocket', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>

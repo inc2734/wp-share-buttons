@@ -17,12 +17,9 @@ class Pocket extends Controller {
 			return;
 		}
 
-		$title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
-
 		$attributes = shortcode_atts(
 			[
 				'type'    => 'balloon',
-				'title'   => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'pocket' ),
 				'post_id' => '',
 			],
 			$attributes
@@ -38,7 +35,6 @@ class Pocket extends Controller {
 			'pocket/' . $file,
 			[
 				'type'    => $attributes['type'],
-				'title'   => $attributes['title'],
 				'post_id' => $attributes['post_id'],
 			]
 		);
