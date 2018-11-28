@@ -106,110 +106,6 @@ add_filter( 'inc2734_wp_share_buttons_apply_https_total_count', function( $bool 
 } );
 ```
 
-### inc2734_wp_share_buttons_facebook_label
-```
-/**
- * Set label of Facebook button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_facebook_label', function( $label ) {
-  return 'Share';
-} );
-```
-
-### inc2734_wp_share_buttons_feed_label
-```
-/**
- * Set label of feed button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_feed_label', function( $label ) {
-  return 'Feed';
-} );
-```
-
-### inc2734_wp_share_buttons_feedly_label
-```
-/**
- * Set label of Feedly button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_feedly_label', function( $label ) {
-  return 'Feedly';
-} );
-```
-
-### inc2734_wp_share_buttons_hatena_label
-```
-/**
- * Set label of Hatena bookmark button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_hatena_label', function( $label ) {
-  return 'Bookmark';
-} );
-```
-
-### inc2734_wp_share_buttons_line_label
-```
-/**
- * Set label of LINE button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_line_label', function( $label ) {
-  return 'LINE';
-} );
-```
-
-### inc2734_wp_share_buttons_pocket_label
-```
-/**
- * Set label of Pocket button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_pocket_label', function( $label ) {
-  return 'Pocket';
-} );
-```
-
-### inc2734_wp_share_buttons_pinterest_label
-```
-/**
- * Set label of Pinterest button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_pinterest_label', function( $label ) {
-  return 'Pinterest';
-} );
-```
-
-### inc2734_wp_share_buttons_twitter_label
-```
-/**
- * Set label of Twitter button
- *
- * @param  {string} $label
- * @return {string}
- */
-add_filter( 'inc2734_wp_share_buttons_twitter_label', function( $label ) {
-  return 'Tweet';
-} );
-```
-
 ### inc2734_wp_share_buttons_localize_script_handle
 ```
 /**
@@ -221,4 +117,34 @@ add_filter( 'inc2734_wp_share_buttons_twitter_label', function( $label ) {
 add_filter( 'inc2734_wp_share_buttons_localize_script_handle', function( $handle ) {
   return $handle;
 } );
+```
+
+### inc2734_wp_share_buttons_facebook_official_button_share
+```
+/**
+ * Add facebook sahre button when using official facebook like button
+ *
+ * @param  {boolean} $boolean
+ * @return {boolean}
+ */
+add_filter( 'inc2734_wp_share_buttons_facebook_official_button_share', function( $boolean ) {
+  return $boolean;
+} );
+```
+
+### inc2734_wp_share_buttons_shared_title
+```
+/**
+ * Customize shared title
+ *
+ * @param  {string} $title
+ * @param  {string} $service
+ * @return {string}
+ */
+add_filter( 'inc2734_wp_share_buttons_shared_title', function( $title, $service ) {
+  if ( 'twitter' === $service ) {
+    return $title . ' #hashtag';
+  }
+  return $title;
+}, 10, 2 );
 ```

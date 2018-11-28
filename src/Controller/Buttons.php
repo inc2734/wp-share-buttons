@@ -17,10 +17,12 @@ class Buttons extends Controller {
 			return;
 		}
 
+		$title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
+
 		$attributes = shortcode_atts(
 			[
 				'type'    => 'balloon',
-				'title'   => strip_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) ),
+				'title'   => $title,
 				'post_id' => '',
 			],
 			$attributes
