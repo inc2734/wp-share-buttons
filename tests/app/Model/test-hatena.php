@@ -1,6 +1,6 @@
 <?php
-use Inc2734\WP_Share_Buttons\Share_Buttons;
-use Inc2734\WP_Share_Buttons\Model\Request\Hatena;
+use Inc2734\WP_Share_Buttons\Bootstrap;
+use Inc2734\WP_Share_Buttons\App\Model\Requester\Hatena;
 
 class Inc2734_WP_Share_Buttons_Hatena_Test extends WP_UnitTestCase {
 
@@ -8,7 +8,7 @@ class Inc2734_WP_Share_Buttons_Hatena_Test extends WP_UnitTestCase {
 		parent::setup();
 
 		// Loading reaquired files
-		new Share_Buttons();
+		new Bootstrap();
 	}
 
 	public function tearDown() {

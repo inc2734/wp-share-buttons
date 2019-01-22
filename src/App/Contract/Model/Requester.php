@@ -5,17 +5,15 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Model\Request;
+namespace Inc2734\WP_Share_Buttons\App\Contract\Model;
 
-use Inc2734\WP_Share_Buttons\Model;
+use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
 
-/**
- * For API CORS
- */
-abstract class Request {
+abstract class Requester {
 
 	/**
 	 * Social service name
+	 *
 	 * @var string
 	 */
 	protected $service_name;
@@ -23,17 +21,15 @@ abstract class Request {
 	/**
 	 * @param string $service_name
 	 */
-	public function __construct( $service_name ) {
-		$this->service_name = $service_name;
+	public function __construct() {
+		if ( ! $this->service_name ) {
+			error_log( '[WP Share Buttons] $service_name is not defined.' );
+			return;
+		}
 
-		add_action(
-			'after_setup_theme',
-			function() {
-				add_action( 'wp_enqueue_scripts', [ $this, '_add_localize_script' ] );
-				add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
-				add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
-			}
-		);
+		add_action( 'wp_enqueue_scripts', [ $this, '_add_localize_script' ], 10000 );
+		add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
+		add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
 	}
 
 	protected function _get_nonce_key() {
@@ -67,12 +63,8 @@ abstract class Request {
 	 * Ajax
 	 *
 	 * @return void
-	 * @SuppressWarnings(PHPMD.UnusedLocalVariable)
 	 */
 	public function _ajax() {
-		// @todo It does not move if it is erased ...
-		global $post;
-
 		check_ajax_referer( $this->_get_nonce_key() );
 
 		if ( ! isset( $_GET['post_id'] ) ) {
@@ -81,7 +73,7 @@ abstract class Request {
 		}
 
 		$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
-		$count_cache = new Model\Count_Cache( $post_id, $this->service_name );
+		$count_cache = new Count_Cache( $post_id, $this->service_name );
 
 		$cache = $count_cache->get();
 		if ( $cache ) {

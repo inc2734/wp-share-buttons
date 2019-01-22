@@ -5,12 +5,21 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Model\Request;
+namespace Inc2734\WP_Share_Buttons\App\Model\Requester;
+
+use Inc2734\WP_Share_Buttons\App\Contract\Model\Requester as Base;
 
 /**
  * For API CORS
  */
-class Twitter extends Request {
+class Twitter extends Base {
+
+	/**
+	 * Social service name
+	 *
+	 * @var string
+	 */
+	protected $service_name = 'twitter';
 
 	/**
 	 * Get count from API

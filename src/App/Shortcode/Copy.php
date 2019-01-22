@@ -5,13 +5,21 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Controller;
+namespace Inc2734\WP_Share_Buttons\App\Shortcode;
+
+use Inc2734\WP_Share_Buttons\App\Contract\Shortcode\Button as Base;
 
 /**
  * Copy button
  */
-class Copy extends Controller {
+class Copy extends Base {
 
+	/**
+	 * Register shortcode
+	 *
+	 * @param array $attributes
+	 * @return void
+	 */
 	public function _shortcode( $attributes ) {
 		if ( ! isset( $attributes['post_id'] ) ) {
 			return;

@@ -5,15 +5,22 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Controller;
+namespace Inc2734\WP_Share_Buttons\App\Shortcode;
 
-use Inc2734\WP_Share_Buttons\Model;
+use Inc2734\WP_Share_Buttons\App\Contract\Shortcode\Button as Base;
+use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
 
 /**
  * Hatena button
  */
-class Hatena extends Controller {
+class Hatena extends Base {
 
+	/**
+	 * Register shortcode
+	 *
+	 * @param array $attributes
+	 * @return void
+	 */
 	public function _shortcode( $attributes ) {
 		if ( ! isset( $attributes['post_id'] ) ) {
 			return;
@@ -38,7 +45,7 @@ class Hatena extends Controller {
 			$expiration = null;
 			$count      = scc_get_share_hatebu();
 		} else {
-			$count_cache = new Model\Count_Cache( $attributes['post_id'], 'hatena' );
+			$count_cache = new Count_Cache( $attributes['post_id'], 'hatena' );
 			$has_cache   = $count_cache->is_enabled();
 			$expiration  = $count_cache->get_cache_expiration();
 			$cache       = $count_cache->get();

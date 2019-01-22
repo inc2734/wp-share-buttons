@@ -5,15 +5,22 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Controller;
+namespace Inc2734\WP_Share_Buttons\App\Shortcode;
 
-use Inc2734\WP_Share_Buttons\Model;
+use Inc2734\WP_Share_Buttons\App\Contract\Shortcode\Button as Base;
+use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
 
 /**
- * Facebook button
+ * Feedly button
  */
-class Facebook extends Controller {
+class Feedly extends Base {
 
+	/**
+	 * Register shortcode
+	 *
+	 * @param array $attributes
+	 * @return void
+	 */
 	public function _shortcode( $attributes ) {
 		if ( ! isset( $attributes['post_id'] ) ) {
 			return;
@@ -30,15 +37,15 @@ class Facebook extends Controller {
 		if ( 'official' === $attributes['type'] ) {
 			$file = 'official';
 		} else {
-			$file = 'facebook';
+			$file = 'feedly';
 		}
 
-		if ( function_exists( 'scc_get_share_facebook' ) ) {
+		if ( function_exists( 'scc_get_follow_feedly' ) ) {
 			$has_cache  = true;
 			$expiration = null;
-			$count      = scc_get_share_facebook();
+			$count      = scc_get_follow_feedly();
 		} else {
-			$count_cache = new Model\Count_Cache( $attributes['post_id'], 'facebook' );
+			$count_cache = new Count_Cache( $attributes['post_id'], 'feedly' );
 			$has_cache   = $count_cache->is_enabled();
 			$expiration  = $count_cache->get_cache_expiration();
 			$cache       = $count_cache->get();
@@ -46,7 +53,7 @@ class Facebook extends Controller {
 		}
 
 		return $this->render(
-			'facebook/' . $file,
+			'feedly/' . $file,
 			[
 				'type'       => $attributes['type'],
 				'post_id'    => $attributes['post_id'],

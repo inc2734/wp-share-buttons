@@ -5,7 +5,7 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Model;
+namespace Inc2734\WP_Share_Buttons\App\Model;
 
 /**
  * Count cache control

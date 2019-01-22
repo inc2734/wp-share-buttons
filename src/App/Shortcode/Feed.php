@@ -5,13 +5,21 @@
  * @license GPL-2.0+
  */
 
-namespace Inc2734\WP_Share_Buttons\Controller;
+namespace Inc2734\WP_Share_Buttons\App\Shortcode;
+
+use Inc2734\WP_Share_Buttons\App\Contract\Shortcode\Button as Base;
 
 /**
- * Google+ button
+ * Feed button
  */
-class GooglePlus extends Controller {
+class Feed extends Base {
 
+	/**
+	 * Register shortcode
+	 *
+	 * @param array $attributes
+	 * @return void
+	 */
 	public function _shortcode( $attributes ) {
 		if ( ! isset( $attributes['post_id'] ) ) {
 			return;
@@ -25,14 +33,8 @@ class GooglePlus extends Controller {
 			$attributes
 		);
 
-		if ( 'official' === $attributes['type'] ) {
-			$file = 'official';
-		} else {
-			$file = 'google-plus';
-		}
-
 		return $this->render(
-			'google-plus/' . $file,
+			'feed/feed',
 			[
 				'type'    => $attributes['type'],
 				'post_id' => $attributes['post_id'],

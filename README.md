@@ -21,7 +21,7 @@ $ composer require inc2734/wp-share-buttons
 ```
 <?php
 // When Using composer auto loader
-new Inc2734\WP_Share_Buttons\Share_Buttons();
+new \Inc2734\WP_Share_Buttons\Bootstrap();
 ```
 
 ## Shortcodes

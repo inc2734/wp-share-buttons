@@ -5,9 +5,9 @@
  * @license GPL-2.0+
  */
 
-use Inc2734\WP_OGP\OGP;
+use Inc2734\WP_OGP\Bootstrap;
 
-$ogp = new OGP();
+$ogp = new Bootstrap();
 
 $fb_locale = 'en_US';
 if ( 'ja' === get_locale() ) {

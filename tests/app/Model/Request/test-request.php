@@ -1,15 +1,15 @@
 <?php
-use Inc2734\WP_Share_Buttons\Share_Buttons;
-use Inc2734\WP_Share_Buttons\Model\Count_Cache;
-use Inc2734\WP_Share_Buttons\Model\Request\Facebook;
+use Inc2734\WP_Share_Buttons\Bootstrap;
+use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
+use Inc2734\WP_Share_Buttons\App\Model\Requester\Facebook;
 
-class Inc2734_WP_Share_Buttons_Request_Test extends WP_UnitTestCase {
+class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 
 	public function setup() {
 		parent::setup();
 
 		// Loading reaquired files
-		new Share_Buttons();
+		new Bootstrap();
 
 		// Through nonce check
 		$nonce = wp_create_nonce( 'wp_share_buttons_facebook' );
