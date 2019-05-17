@@ -1,7 +1,7 @@
 <?php
 use Inc2734\WP_Share_Buttons\Bootstrap;
 use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
-use Inc2734\WP_Share_Buttons\App\Model\Requester\Facebook;
+use Inc2734\WP_Share_Buttons\App\Model\Requester\Hatena;
 
 class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 
@@ -28,7 +28,7 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 	 * @test
 	 */
 	public function _ajax() {
-		$object = new Facebook( 'facebook' );
+		$object = new Hatena( 'hatena' );
 
 		// Pattern: ! isset( $_GET['post_id'] )
 		ob_start();
@@ -38,13 +38,13 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 
 		// Pattern: no cache
 		$_GET['post_id'] = $this->factory->post->create();
-		$count_cache = new Count_Cache( $_GET['post_id'], 'facebook' );
+		$count_cache = new Count_Cache( $_GET['post_id'], 'hatena' );
 		$cache = $count_cache->get();
 		$this->assertFalse( $cache );
 		ob_start();
 		$object->_ajax();
 		$response = json_decode( ob_get_clean(), true );
-		$this->assertSame( 0, preg_match( '/^\d+$/', $response['count'] ) );
-		$this->assertNotEquals( '', $count_cache->get() );
+		$this->assertSame( 1, preg_match( '/^\d+$/', $response['count'] ) );
+		$this->assertFalse( $count_cache->get() );
 	}
 }
