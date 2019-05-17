@@ -76,7 +76,7 @@ abstract class Requester {
 		$count_cache = new Count_Cache( $post_id, $this->service_name );
 
 		$cache = $count_cache->get();
-		if ( $cache ) {
+		if ( false !== $cache ) {
 			$this->_send_json( $cache );
 			return;
 		}

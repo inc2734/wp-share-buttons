@@ -40,11 +40,11 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 		$_GET['post_id'] = $this->factory->post->create();
 		$count_cache = new Count_Cache( $_GET['post_id'], 'facebook' );
 		$cache = $count_cache->get();
-		$this->assertNull( $cache );
+		$this->assertFalse( $cache );
 		ob_start();
 		$object->_ajax();
 		$response = json_decode( ob_get_clean(), true );
-		$this->assertSame( 1, preg_match( '/^\d+$/', $response['count'] ) );
+		$this->assertSame( 0, preg_match( '/^\d+$/', $response['count'] ) );
 		$this->assertNotEquals( '', $count_cache->get() );
 	}
 }

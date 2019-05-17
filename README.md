@@ -39,6 +39,20 @@ When type is not official, buttons sums http and https counts.
 [wp_share_buttons_facebook type="(Optional)" post_id="(Required)"]
 ```
 
+Need App Token to get facebook share count.
+
+```
+/**
+ * @see https://developers.facebook.com/tools/accesstoken
+ */
+add_filter(
+  'inc2734_wp_share_buttons_facebook_app_token',
+  function() {
+    return 'Your App Token';
+  }
+);
+```
+
 ### Twitter
 ```
 [wp_share_buttons_twitter type="(Optional)" title="(Optional)" post_id="(Required)"]

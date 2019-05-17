@@ -24,11 +24,22 @@ class Facebook extends Base {
 	/**
 	 * Get count from API
 	 *
+	 * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+	 *
+	 * @see https://developers.facebook.com/tools/accesstoken
+	 *
 	 * @param string $permalink
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
-		$request  = "https://graph.facebook.com/?id=$permalink";
+		$app_token = apply_filters( 'inc2734_wp_share_buttons_facebook_app_token', false );
+
+		if ( ! $app_token ) {
+			error_log( '[WP Share Buttons] You need to set Facebook App Token.' );
+			return '-';
+		}
+
+		$request  = "https://graph.facebook.com/?id={$permalink}&fields=engagement&access_token={$app_token}";
 		$response = wp_remote_get( $request );
 		$body = wp_remote_retrieve_body( $response );
 		$body = json_decode( $body, true );
@@ -41,14 +52,24 @@ class Facebook extends Base {
 			return '-';
 		}
 
-		if ( ! isset( $body['share'] ) || ! is_array( $body['share'] ) ) {
-			return '-';
+		if ( isset( $body['share']['share_count'] ) ) {
+			return $body['share']['share_count'];
 		}
 
-		if ( ! isset( $body['share']['share_count'] ) ) {
-			return '-';
+		if ( isset( $body['engagement']['share_count'] ) || isset( $body['engagement']['reaction_count'] ) ) {
+			$engagement_count = 0;
+
+			if ( isset( $body['engagement']['share_count'] ) ) {
+				$engagement_count += $body['engagement']['share_count'];
+			}
+
+			if ( isset( $body['engagement']['reaction_count'] ) ) {
+				$engagement_count += $body['engagement']['reaction_count'];
+			}
+
+			return $engagement_count;
 		}
 
-		return $body['share']['share_count'];
+		return '-';
 	}
 }
