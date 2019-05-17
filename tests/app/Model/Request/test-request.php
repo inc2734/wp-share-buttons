@@ -44,7 +44,7 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 		ob_start();
 		$object->_ajax();
 		$response = json_decode( ob_get_clean(), true );
-		$this->assertSame( 1, preg_match( '/^\d+$/', $response['count'] ) );
-		$this->assertFalse( $count_cache->get() );
+		$this->assertSame( 0, (int) $response['count'] );
+		$this->assertSame( 0, (int) $count_cache->get() );
 	}
 }
