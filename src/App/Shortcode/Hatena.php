@@ -49,7 +49,7 @@ class Hatena extends Base {
 			$has_cache   = $count_cache->is_enabled();
 			$expiration  = $count_cache->get_cache_expiration();
 			$cache       = $count_cache->get();
-			$count       = $count_cache->is_anabled() ? $cache : '-';
+			$count       = $count_cache->is_enabled() ? $cache : '-';
 		}
 
 		return $this->render(
