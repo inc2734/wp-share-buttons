@@ -70,10 +70,6 @@
       color: #008be2; }
       .wp-share-button__icon--hatena::before {
         content: ""; }
-    .wp-share-button__icon--google-plus {
-      color: #d9453d; }
-      .wp-share-button__icon--google-plus::before {
-        content: ""; }
     .wp-share-button__icon--feedly {
       color: #6cc655; }
       .wp-share-button__icon--feedly::before {
@@ -164,10 +160,6 @@
       line-height: 16px;
       padding: 1px 7px 1px 5px;
       min-height: 23px; }
-    .wp-share-button--horizontal.wp-share-button--google-plus .wp-share-button__button, .wp-share-button--google-plus.wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--google-plus.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
-      margin-right: 0; }
-    .wp-share-button--horizontal.wp-share-button--google-plus .wp-share-button__count, .wp-share-button--google-plus.wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--google-plus.wp-share-button--copy.wp-share-button--official .wp-share-button__count {
-      display: none; }
     .wp-share-button--horizontal.wp-share-button--pocket .wp-share-button__button, .wp-share-button--pocket.wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--pocket.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
       margin-right: 0; }
     .wp-share-button--horizontal.wp-share-button--pocket .wp-share-button__count, .wp-share-button--pocket.wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--pocket.wp-share-button--copy.wp-share-button--official .wp-share-button__count {
@@ -201,8 +193,6 @@
     background-color: #4555ab; }
   .wp-share-button--icon.wp-share-button--hatena .wp-share-button__button {
     background-color: #008be2; }
-  .wp-share-button--icon.wp-share-button--google-plus .wp-share-button__button {
-    background-color: #d9453d; }
   .wp-share-button--icon.wp-share-button--feedly .wp-share-button__button {
     background-color: #6cc655; }
   .wp-share-button--icon.wp-share-button--pocket .wp-share-button__button {
@@ -245,11 +235,6 @@
     .wp-share-button--block.wp-share-button--hatena .wp-share-button__button {
       background-color: #008be2;
       border-bottom: 5px solid #0075be; }
-    .wp-share-button--block.wp-share-button--google-plus .wp-share-button__button {
-      background-color: #d9453d;
-      border-bottom: 5px solid #cb3028; }
-    .wp-share-button--block.wp-share-button--google-plus .wp-share-button__count {
-      display: none; }
     .wp-share-button--block.wp-share-button--feedly .wp-share-button__button {
       background-color: #6cc655;
       border-bottom: 5px solid #57b93e; }
