@@ -63,7 +63,7 @@
       .wp-share-button__icon--twitter::before {
         content: ""; }
     .wp-share-button__icon--facebook {
-      color: #4555ab; }
+      color: #1877f2; }
       .wp-share-button__icon--facebook::before {
         content: ""; }
     .wp-share-button__icon--hatena {
@@ -190,7 +190,7 @@
   .wp-share-button--icon.wp-share-button--twitter .wp-share-button__button {
     background-color: #00acf2; }
   .wp-share-button--icon.wp-share-button--facebook .wp-share-button__button {
-    background-color: #4555ab; }
+    background-color: #1877f2; }
   .wp-share-button--icon.wp-share-button--hatena .wp-share-button__button {
     background-color: #008be2; }
   .wp-share-button--icon.wp-share-button--feedly .wp-share-button__button {
@@ -230,8 +230,8 @@
       background-color: #00acf2;
       border-bottom: 5px solid #0093ce; }
     .wp-share-button--block.wp-share-button--facebook .wp-share-button__button {
-      background-color: #4555ab;
-      border-bottom: 5px solid #3b4892; }
+      background-color: #1877f2;
+      border-bottom: 5px solid #0c66da; }
     .wp-share-button--block.wp-share-button--hatena .wp-share-button__button {
       background-color: #008be2;
       border-bottom: 5px solid #0075be; }
