@@ -20,7 +20,8 @@
   .wp-share-button__count {
     position: relative;
     border-radius: 3px;
-    text-align: center; }
+    text-align: center;
+    color: #333; }
   .wp-share-button__button {
     display: flex;
     justify-content: center;
