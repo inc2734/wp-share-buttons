@@ -123,7 +123,10 @@ abstract class Requester {
 			$count = $this->_get_count( rawurlencode( $permalink ) );
 		} elseif ( 0 === strpos( $permalink, 'https://' ) ) {
 			$count = $this->_get_count( rawurlencode( $permalink ) );
-			if ( apply_filters( 'inc2734_wp_share_buttons_apply_https_total_count', true ) ) {
+			if (
+				apply_filters( 'inc2734_wp_share_buttons_apply_https_total_count', true )
+				&& $this->_apply_https_total_count()
+			) {
 				$https_count = $count;
 				$http_count  = $this->_get_count( rawurlencode( str_replace( 'https://', 'http://', $permalink ) ) );
 				$count       = $this->_add( $https_count, $http_count );
@@ -162,4 +165,11 @@ abstract class Requester {
 	 * @return int Count
 	 */
 	abstract protected function _get_count( $permalink );
+
+	/**
+	 * Return true when apply https total count.
+	 *
+	 * @return boolean
+	 */
+	abstract protected function _apply_https_total_count();
 }

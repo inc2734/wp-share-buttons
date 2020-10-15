@@ -54,4 +54,13 @@ class Twitter extends Base {
 
 		return $body['count'];
 	}
+
+	/**
+	 * Return true when apply https total count.
+	 *
+	 * @return boolean
+	 */
+	protected function _apply_https_total_count() {
+		return true;
+	}
 }

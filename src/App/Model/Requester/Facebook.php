@@ -72,4 +72,13 @@ class Facebook extends Base {
 
 		return '-';
 	}
+
+	/**
+	 * Return true when apply https total count.
+	 *
+	 * @return boolean
+	 */
+	protected function _apply_https_total_count() {
+		return true;
+	}
 }

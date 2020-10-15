@@ -42,4 +42,13 @@ class Hatena extends Base {
 
 		return $body;
 	}
+
+	/**
+	 * Return true when apply https total count.
+	 *
+	 * @return boolean
+	 */
+	protected function _apply_https_total_count() {
+		return false;
+	}
 }
