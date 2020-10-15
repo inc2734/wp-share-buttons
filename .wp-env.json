@@ -1,0 +1,9 @@
+{
+  "core": null,
+  "mappings": {
+    "wp-content/plugins/wp-share-buttons": "./"
+  },
+  "config": {
+    "WP_DEBUG": true
+  }
+}

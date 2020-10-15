@@ -11,6 +11,9 @@ use Inc2734\WP_Share_Buttons\App\Shortcode;
 
 class Bootstrap {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		load_textdomain( 'inc2734-wp-share-buttons', __DIR__ . '/languages/' . get_locale() . '.mo' );
 
@@ -33,43 +36,43 @@ class Bootstrap {
 	}
 
 	/**
-	 * Enqueue scripts
+	 * Enqueue scripts.
 	 *
 	 * @return void
 	 */
 	public function _enqueue_scripts() {
 		wp_enqueue_script(
 			'wp-share-buttons',
-			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.min.js',
+			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.js',
 			[],
-			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.min.js' ),
+			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.js' ),
 			true
 		);
 	}
 
 	/**
-	 * Enqueue styles
+	 * Enqueue styles.
 	 *
 	 * @return void
 	 */
 	public function _enqueue_styles() {
 		wp_enqueue_style(
 			'wp-share-buttons',
-			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css',
+			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.css',
 			[],
-			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css' )
+			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.css' )
 		);
 	}
 
 	/**
-	 * Add editor style
+	 * Add editor style.
 	 *
 	 * @return void
 	 */
 	public function _add_editor_style() {
 		add_editor_style(
 			[
-				'vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css',
+				'vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.css',
 			]
 		);
 	}

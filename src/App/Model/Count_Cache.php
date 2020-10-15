@@ -23,8 +23,10 @@ class Count_Cache {
 	protected $service_name;
 
 	/**
-	 * @param int $post_id
-	 * @param string $service_name Social service name
+	 * Constructor.
+	 *
+	 * @param int    $post_id      The post ID.
+	 * @param string $service_name Social service name.
 	 */
 	public function __construct( $post_id, $service_name ) {
 		$this->post_id      = $post_id;
@@ -32,7 +34,7 @@ class Count_Cache {
 	}
 
 	/**
-	 * Return count cache
+	 * Return count cache.
 	 *
 	 * @return null|int
 	 */
@@ -42,7 +44,7 @@ class Count_Cache {
 	}
 
 	/**
-	 * Return count cache
+	 * Return count cache.
 	 *
 	 * @return null|int
 	 */
@@ -54,9 +56,9 @@ class Count_Cache {
 	}
 
 	/**
-	 * Return true when have count cache
+	 * Return true when have count cache.
 	 *
-	 * @return bool
+	 * @return boolean
 	 */
 	public function is_enabled() {
 		$cache = $this->get();
@@ -64,9 +66,10 @@ class Count_Cache {
 	}
 
 	/**
-	 * Update count cache
+	 * Update count cache.
 	 *
-	 * @return bool
+	 * @param int $count Share count.
+	 * @return void
 	 */
 	public function update( $count ) {
 		update_post_meta(

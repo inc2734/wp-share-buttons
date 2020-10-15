@@ -9,29 +9,26 @@ namespace Inc2734\WP_Share_Buttons\App\Model\Requester;
 
 use Inc2734\WP_Share_Buttons\App\Contract\Model\Requester as Base;
 
-/**
- * For API CORS
- */
 class Twitter extends Base {
 
 	/**
-	 * Social service name
+	 * Social service name.
 	 *
 	 * @var string
 	 */
 	protected $service_name = 'twitter';
 
 	/**
-	 * Get count from API
+	 * Get count from API.
 	 *
-	 * @param string $permalink
+	 * @param string $permalink Permalink of target page.
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
 		$request  = "https://opensharecount.com/count.json?url=$permalink";
 		$response = wp_remote_get( $request );
-		$body = wp_remote_retrieve_body( $response );
-		$body = json_decode( $body, true );
+		$body     = wp_remote_retrieve_body( $response );
+		$body     = json_decode( $body, true );
 
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 			error_log( '[WP Share Buttons] Twitter request / ' . $request . ' / ' . json_encode( $body ) );
@@ -58,7 +55,7 @@ class Twitter extends Base {
 	/**
 	 * Return true when apply https total count.
 	 *
-	 * @return boolean
+	 * @return booleanean
 	 */
 	protected function _apply_https_total_count() {
 		return true;

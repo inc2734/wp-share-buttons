@@ -9,26 +9,21 @@ namespace Inc2734\WP_Share_Buttons\App\Model\Requester;
 
 use Inc2734\WP_Share_Buttons\App\Contract\Model\Requester as Base;
 
-/**
- * For API CORS
- */
 class Facebook extends Base {
 
 	/**
-	 * Social service name
+	 * Social service name.
 	 *
 	 * @var string
 	 */
 	protected $service_name = 'facebook';
 
 	/**
-	 * Get count from API
-	 *
-	 * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+	 * Get count from API.
 	 *
 	 * @see https://developers.facebook.com/tools/accesstoken
 	 *
-	 * @param string $permalink
+	 * @param string $permalink Permalink of target page.
 	 * @return int Count
 	 */
 	protected function _get_count( $permalink ) {
@@ -41,8 +36,8 @@ class Facebook extends Base {
 
 		$request  = "https://graph.facebook.com/?id={$permalink}&fields=engagement&access_token={$app_token}";
 		$response = wp_remote_get( $request );
-		$body = wp_remote_retrieve_body( $response );
-		$body = json_decode( $body, true );
+		$body     = wp_remote_retrieve_body( $response );
+		$body     = json_decode( $body, true );
 
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 			error_log( '[WP Share Buttons] Facebook request / ' . $request . ' / ' . json_encode( $body ) );
@@ -76,7 +71,7 @@ class Facebook extends Base {
 	/**
 	 * Return true when apply https total count.
 	 *
-	 * @return boolean
+	 * @return booleanean
 	 */
 	protected function _apply_https_total_count() {
 		return true;

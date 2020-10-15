@@ -7,16 +7,12 @@
 
 namespace Inc2734\WP_Share_Buttons\App\Contract\Shortcode;
 
-/**
- * Abstract share button shortcodes
- *
- * @SuppressWarnings(PHPMD.NumberOfChildren)
- */
 abstract class Button {
 
 	/**
-	 * @param string $shortcode_name
-	 * @param boolean $is_request
+	 * Constructor.
+	 *
+	 * @param string $shortcode_name The shortcode name.
 	 */
 	public function __construct( $shortcode_name ) {
 		add_shortcode( $shortcode_name, [ $this, '_shortcode' ] );
@@ -28,15 +24,15 @@ abstract class Button {
 	}
 
 	/**
-	 * Register shortcode
+	 * Register shortcode.
 	 *
-	 * @param array $attributes
+	 * @param array $attributes The shortcode attributes.
 	 * @return void
 	 */
 	abstract public function _shortcode( $attributes );
 
 	/**
-	 * Return Requester class name
+	 * Return Requester class name.
 	 *
 	 * @return string
 	 */
@@ -54,14 +50,14 @@ abstract class Button {
 	}
 
 	/**
-	 * Load shortcode
+	 * Load shortcode.
 	 *
-	 * @param string $filepath
-	 * @param array $vars
+	 * @param string $filename The view file name.
+	 * @param array  $vars     The view args.
 	 * @return string
 	 */
-	protected function render( $filepath, $vars ) {
-		$filepath = __DIR__ . '/../../../view/' . $filepath . '.php';
+	protected function render( $filename, $vars ) {
+		$filepath = __DIR__ . '/../../../view/' . $filename . '.php';
 		if ( file_exists( $filepath ) ) {
 			ob_start();
 			// @todo Using getter method

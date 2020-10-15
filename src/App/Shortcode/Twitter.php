@@ -10,16 +10,13 @@ namespace Inc2734\WP_Share_Buttons\App\Shortcode;
 use Inc2734\WP_Share_Buttons\App\Contract\Shortcode\Button as Base;
 use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
 
-/**
- * Twitter button
- */
 class Twitter extends Base {
 
 	/**
-	 * Register shortcode
+	 * Register shortcode.
 	 *
-	 * @param array $attributes
-	 * @return void
+	 * @param array $attributes The shortcode attributes.
+	 * @return string
 	 */
 	public function _shortcode( $attributes ) {
 		if ( ! isset( $attributes['post_id'] ) ) {

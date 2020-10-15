@@ -12,14 +12,14 @@ use Inc2734\WP_Share_Buttons\App\Model\Count_Cache;
 abstract class Requester {
 
 	/**
-	 * Social service name
+	 * Social service name.
 	 *
 	 * @var string
 	 */
 	protected $service_name;
 
 	/**
-	 * @param string $service_name
+	 * Constructor.
 	 */
 	public function __construct() {
 		if ( ! $this->service_name ) {
@@ -32,12 +32,15 @@ abstract class Requester {
 		add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
 	}
 
+	/**
+	 * Return nonce key.
+	 */
 	protected function _get_nonce_key() {
 		return 'inc2734_wp_share_buttons_' . $this->service_name;
 	}
 
 	/**
-	 * Setup localize script
+	 * Setup localize script.
 	 *
 	 * @return void
 	 */
@@ -60,7 +63,7 @@ abstract class Requester {
 	}
 
 	/**
-	 * Ajax
+	 * Ajax.
 	 *
 	 * @return void
 	 */
@@ -72,7 +75,7 @@ abstract class Requester {
 			return;
 		}
 
-		$post_id = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
+		$post_id     = sanitize_text_field( wp_unslash( $_GET['post_id'] ) );
 		$count_cache = new Count_Cache( $post_id, $this->service_name );
 
 		$cache = $count_cache->get();
@@ -87,10 +90,9 @@ abstract class Requester {
 	}
 
 	/**
-	 * Send json
+	 * Send json.
 	 *
-	 * @param array $count
-	 * @return json
+	 * @param array $count Share count.
 	 */
 	protected function _send_json( $count ) {
 		if ( ! is_numeric( $count ) ) {
@@ -105,7 +107,7 @@ abstract class Requester {
 	}
 
 	/**
-	 * Request to API
+	 * Request to API.
 	 *
 	 * @return int Count
 	 */
@@ -141,10 +143,10 @@ abstract class Requester {
 	}
 
 	/**
-	 * Add count
+	 * Add count.
 	 *
-	 * @param int|- $a
-	 * @param int|- $b
+	 * @param int|- $arg1 Added count 1.
+	 * @param int|- $arg2 Added count 2.
 	 */
 	protected function _add( $arg1, $arg2 ) {
 		if ( is_numeric( $arg1 ) && is_numeric( $arg2 ) ) {
@@ -159,9 +161,9 @@ abstract class Requester {
 	}
 
 	/**
-	 * Get count from API
+	 * Get count from API.
 	 *
-	 * @param string $permalink
+	 * @param string $permalink Permalink of target page.
 	 * @return int Count
 	 */
 	abstract protected function _get_count( $permalink );
@@ -169,7 +171,7 @@ abstract class Requester {
 	/**
 	 * Return true when apply https total count.
 	 *
-	 * @return boolean
+	 * @return booleanean
 	 */
 	abstract protected function _apply_https_total_count();
 }
