@@ -218,6 +218,15 @@
     color: #fff;
     height: 20px;
     min-height: auto;
+
+    svg {
+      width: 12px;
+      height: 12px;
+
+      path {
+        fill: #fff !important
+      }
+    }
   }
 
   .wp-share-button__label {
@@ -234,6 +243,15 @@
     color: #fff;
     height: 20px;
     min-height: auto;
+
+    svg {
+      width: 12px;
+      height: 12px;
+
+      path {
+        fill: #fff !important
+      }
+    }
   }
 
   .wp-share-button__label {
