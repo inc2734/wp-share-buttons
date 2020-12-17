@@ -1,6 +1,6 @@
 # WP Share Buttons
 
-[![Build Status](https://travis-ci.org/inc2734/wp-share-buttons.svg?branch=master)](https://travis-ci.org/inc2734/wp-share-buttons)
+![CI](https://github.com/inc2734/wp-share-buttons/workflows/CI/badge.svg)
 [![Latest Stable Version](https://poser.pugx.org/inc2734/wp-share-buttons/v/stable)](https://packagist.org/packages/inc2734/wp-share-buttons)
 [![License](https://poser.pugx.org/inc2734/wp-share-buttons/license)](https://packagist.org/packages/inc2734/wp-share-buttons)
 
@@ -20,7 +20,6 @@ $ composer require inc2734/wp-share-buttons
 ## How to use
 ```
 <?php
-// When Using composer auto loader
 new \Inc2734\WP_Share_Buttons\Bootstrap();
 ```
 
