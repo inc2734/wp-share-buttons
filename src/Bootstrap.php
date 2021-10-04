@@ -29,16 +29,14 @@ class Bootstrap {
 		new Shortcode\Copy( 'wp_share_buttons_copy' );
 		new Shortcode\Buttons( 'wp_share_buttons' );
 
-		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_scripts' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_styles' ] );
-		add_action( 'enqueue_block_editor_assets', [ $this, '_enqueue_styles' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_scripts' ], 9 );
+		add_action( 'wp_enqueue_scripts', [ $this, '_enqueue_styles' ], 9 );
+		add_action( 'enqueue_block_editor_assets', [ $this, '_enqueue_styles' ], 9 );
 		add_action( 'after_setup_theme', [ $this, '_add_editor_style' ] );
 	}
 
 	/**
 	 * Enqueue scripts.
-	 *
-	 * @return void
 	 */
 	public function _enqueue_scripts() {
 		wp_enqueue_script(
@@ -52,8 +50,6 @@ class Bootstrap {
 
 	/**
 	 * Enqueue styles.
-	 *
-	 * @return void
 	 */
 	public function _enqueue_styles() {
 		wp_enqueue_style(
@@ -66,8 +62,6 @@ class Bootstrap {
 
 	/**
 	 * Add editor style.
-	 *
-	 * @return void
 	 */
 	public function _add_editor_style() {
 		add_editor_style(
