@@ -46,6 +46,15 @@ class Bootstrap {
 			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.js' ),
 			true
 		);
+
+		wp_localize_script(
+			'wp-share-buttons',
+			'inc2734_wp_share_buttons',
+			[
+				'copy_success' => __( 'Copied !', 'inc2734-wp-share-buttons' ),
+				'copy_failed'  => __( 'Copy failed !', 'inc2734-wp-share-buttons' ),
+			]
+		);
 	}
 
 	/**

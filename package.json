@@ -39,7 +39,8 @@
     "js:build": "wp-scripts build src/src/js/wp-share-buttons.js --output-path src/assets/js",
     "js": "npm-run-all -s cleanup:js js:build",
     "img": "npm run cleanup:img && cpy src/src/img/* src/assets/img",
-    "build": "npm-run-all -p css js img"
+    "build": "npm-run-all -p css js img",
+    "makepot": "wp i18n make-pot ./wp-content/plugins/wp-share-buttons/src ./wp-content/plugins/wp-share-buttons/src/languages/generic.pot --domain=inc2734-wp-share-buttons"
   },
   "dependencies": {}
 }

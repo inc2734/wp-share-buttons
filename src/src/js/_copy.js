@@ -29,7 +29,9 @@ export default class Inc2734_WP_Share_Buttons_Copy {
       const result = document.execCommand('copy');
       input.remove();
 
-      const message = result ? 'Copied !' : 'Copy failed !';
+      const message = result
+        ? inc2734_wp_share_buttons.copy_success
+        : inc2734_wp_share_buttons.copy_failed;
       const messageWrapper = document.createElement('div');
       messageWrapper.classList.add('wp-share-buttons-copy-message');
       messageWrapper.textContent = message;
