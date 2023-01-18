@@ -22,7 +22,7 @@ $query = array(
 			<?php echo esc_html( $count ); ?>
 		</div>
 	<?php endif; ?>
-	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://twitter.com/share?' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
+	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://twitter.com/intent/tweet?' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--twitter">
 			<?php
 			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/twitter.svg';
