@@ -15,7 +15,7 @@ abstract class Button {
 	 * @param string $shortcode_name The shortcode name.
 	 */
 	public function __construct( $shortcode_name ) {
-		add_shortcode( $shortcode_name, [ $this, '_shortcode' ] );
+		add_shortcode( $shortcode_name, array( $this, '_shortcode' ) );
 
 		$requester = $this->_get_requester();
 		if ( $requester ) {

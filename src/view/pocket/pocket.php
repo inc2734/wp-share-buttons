@@ -5,9 +5,9 @@
  * @license GPL-2.0+
  */
 
-$query = [
+$query = array(
 	'url' => get_permalink( $post_id ),
-];
+);
 ?>
 <div id="wp-share-buttons-pocket-<?php echo esc_attr( $post_id ); ?>"
 	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--pocket"

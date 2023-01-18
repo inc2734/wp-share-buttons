@@ -26,12 +26,12 @@ class Twitter extends Base {
 		$title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
 
 		$attributes = shortcode_atts(
-			[
+			array(
 				'type'     => 'balloon',
 				'title'    => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'twitter' ),
 				'post_id'  => '',
 				'hashtags' => apply_filters( 'inc2734_wp_share_buttons_shared_hashtags', '', 'twitter' ),
-			],
+			),
 			$attributes
 		);
 
@@ -55,7 +55,7 @@ class Twitter extends Base {
 
 		return $this->render(
 			'twitter/' . $file,
-			[
+			array(
 				'type'       => $attributes['type'],
 				'title'      => $attributes['title'],
 				'post_id'    => $attributes['post_id'],
@@ -63,7 +63,7 @@ class Twitter extends Base {
 				'has_cache'  => $has_cache,
 				'expiration' => $expiration,
 				'count'      => $count,
-			]
+			)
 		);
 	}
 }

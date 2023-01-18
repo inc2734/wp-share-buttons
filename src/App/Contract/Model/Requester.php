@@ -27,9 +27,9 @@ abstract class Requester {
 			return;
 		}
 
-		add_action( 'wp_enqueue_scripts', [ $this, '_add_localize_script' ], 10000 );
-		add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
-		add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, [ $this, '_ajax' ] );
+		add_action( 'wp_enqueue_scripts', array( $this, '_add_localize_script' ), 10000 );
+		add_action( 'wp_ajax_inc2734_wp_share_buttons_' . $this->service_name, array( $this, '_ajax' ) );
+		add_action( 'wp_ajax_nopriv_inc2734_wp_share_buttons_' . $this->service_name, array( $this, '_ajax' ) );
 	}
 
 	/**
@@ -54,11 +54,11 @@ abstract class Requester {
 		wp_localize_script(
 			$handle,
 			'inc2734_wp_share_buttons_' . $this->service_name,
-			[
+			array(
 				'endpoint'    => admin_url( 'admin-ajax.php' ),
 				'action'      => 'inc2734_wp_share_buttons_' . $this->service_name,
 				'_ajax_nonce' => wp_create_nonce( $this->_get_nonce_key() ),
-			]
+			)
 		);
 	}
 
@@ -100,9 +100,9 @@ abstract class Requester {
 		}
 
 		wp_send_json(
-			[
+			array(
 				'count' => $count,
-			]
+			)
 		);
 	}
 

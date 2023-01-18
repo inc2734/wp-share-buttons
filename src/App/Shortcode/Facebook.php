@@ -24,10 +24,10 @@ class Facebook extends Base {
 		}
 
 		$attributes = shortcode_atts(
-			[
+			array(
 				'type'    => 'balloon',
 				'post_id' => '',
-			],
+			),
 			$attributes
 		);
 
@@ -51,13 +51,13 @@ class Facebook extends Base {
 
 		return $this->render(
 			'facebook/' . $file,
-			[
+			array(
 				'type'       => $attributes['type'],
 				'post_id'    => $attributes['post_id'],
 				'has_cache'  => $has_cache,
 				'expiration' => $expiration,
 				'count'      => $count,
-			]
+			)
 		);
 	}
 }

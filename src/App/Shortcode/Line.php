@@ -23,10 +23,10 @@ class Line extends Base {
 		}
 
 		$attributes = shortcode_atts(
-			[
+			array(
 				'type'    => 'balloon',
 				'post_id' => '',
-			],
+			),
 			$attributes
 		);
 
@@ -38,10 +38,10 @@ class Line extends Base {
 
 		return $this->render(
 			'line/' . $file,
-			[
+			array(
 				'type'    => $attributes['type'],
 				'post_id' => $attributes['post_id'],
-			]
+			)
 		);
 	}
 }

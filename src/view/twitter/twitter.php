@@ -5,11 +5,11 @@
  * @license GPL-2.0+
  */
 
-$query = [
+$query = array(
 	'text'     => $title,
 	'url'      => get_permalink( $post_id ),
 	'hashtags' => $hashtags,
-];
+);
 ?>
 <div id="wp-share-buttons-twitter-<?php echo esc_attr( $post_id ); ?>"
 	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--twitter"

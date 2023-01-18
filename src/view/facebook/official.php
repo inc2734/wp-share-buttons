@@ -14,7 +14,7 @@ if ( 'ja' === get_locale() ) {
 	$fb_locale = 'ja_JP';
 }
 
-$query_args            = [];
+$query_args            = array();
 $query_args['version'] = 'v3.1';
 if ( $ogp->get_app_id() ) {
 	$query_args['appId'] = $ogp->get_app_id();

@@ -24,10 +24,10 @@ class Feedly extends Base {
 		}
 
 		$attributes = shortcode_atts(
-			[
+			array(
 				'type'    => 'balloon',
 				'post_id' => '',
-			],
+			),
 			$attributes
 		);
 
@@ -51,13 +51,13 @@ class Feedly extends Base {
 
 		return $this->render(
 			'feedly/' . $file,
-			[
+			array(
 				'type'       => $attributes['type'],
 				'post_id'    => $attributes['post_id'],
 				'has_cache'  => $has_cache,
 				'expiration' => $expiration,
 				'count'      => $count,
-			]
+			)
 		);
 	}
 }

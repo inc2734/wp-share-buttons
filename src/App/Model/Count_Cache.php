@@ -75,10 +75,10 @@ class Count_Cache {
 		update_post_meta(
 			$this->post_id,
 			'_inc2734_count_cache_' . $this->service_name,
-			[
+			array(
 				'count'      => $count,
 				'expiration' => time() + (int) apply_filters( 'inc2734_wp_share_buttons_count_cache_seconds', 60 * 5 ),
-			]
+			)
 		);
 	}
 }

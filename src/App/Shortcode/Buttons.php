@@ -25,22 +25,22 @@ class Buttons extends Base {
 		$title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
 
 		$attributes = shortcode_atts(
-			[
+			array(
 				'type'    => 'balloon',
 				'title'   => $title,
 				'post_id' => '',
-			],
+			),
 			$attributes
 		);
 
 		return do_shortcode(
 			$this->render(
 				'buttons',
-				[
+				array(
 					'type'    => $attributes['type'],
 					'title'   => $attributes['title'],
 					'post_id' => $attributes['post_id'],
-				]
+				)
 			)
 		);
 	}

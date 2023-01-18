@@ -23,19 +23,19 @@ class Feed extends Base {
 		}
 
 		$attributes = shortcode_atts(
-			[
+			array(
 				'type'    => 'balloon',
 				'post_id' => '',
-			],
+			),
 			$attributes
 		);
 
 		return $this->render(
 			'feed/feed',
-			[
+			array(
 				'type'    => $attributes['type'],
 				'post_id' => $attributes['post_id'],
-			]
+			)
 		);
 	}
 }

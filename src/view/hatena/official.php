@@ -6,7 +6,7 @@
  */
 
 $permalink = get_permalink( $post_id );
-$target    = str_replace( [ 'https://', 'http://' ], '', $permalink );
+$target    = str_replace( array( 'https://', 'http://' ), '', $permalink );
 if ( 0 === strpos( $permalink, 'https://' ) ) {
 	$target = 's/' . $target;
 }
