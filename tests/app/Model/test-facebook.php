@@ -4,15 +4,15 @@ use Inc2734\WP_Share_Buttons\App\Model\Requester\Facebook;
 
 class Inc2734_WP_Share_Buttons_Facebook_Test extends WP_UnitTestCase {
 
-	public function setup() {
-		parent::setup();
+	public function se_tup() {
+		parent::set_up();
 
 		// Loading reaquired files
 		new Bootstrap();
 	}
 
-	public function tearDown() {
-		parent::tearDown();
+	public function tear_down() {
+		parent::tear_down();
 	}
 
 	/**
