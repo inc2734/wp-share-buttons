@@ -44,7 +44,10 @@ class Bootstrap {
 			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.js',
 			array(),
 			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.js' ),
-			true
+			array(
+				'in_footer' => false,
+				'strategy'  => 'defer',
+			)
 		);
 
 		wp_localize_script(
