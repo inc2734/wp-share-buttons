@@ -65,6 +65,12 @@
     #{$root}__icon {
       margin-top: -1px;
     }
+
+    @each $name, $values in $icons {
+      .wp-share-button__icon--#{ $name } {
+        color: nth($values, 1);
+      }
+    }
   }
 
   /**

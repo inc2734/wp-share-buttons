@@ -11,7 +11,7 @@
 			[wp_share_buttons_facebook type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]
 		</li>
 		<li class="wp-share-buttons__item">
-			[wp_share_buttons_twitter type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>" title="<?php echo esc_attr( $title ); ?>"]
+			[wp_share_buttons_x type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>" title="<?php echo esc_attr( $title ); ?>"]
 		</li>
 		<li class="wp-share-buttons__item">
 			[wp_share_buttons_hatena type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]
