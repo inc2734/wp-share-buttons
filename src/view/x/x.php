@@ -8,7 +8,7 @@
 $query = array(
 	'text'     => $title,
 	'url'      => get_permalink( $post_id ),
-	'hashtags' => $hashtags,
+	'hashtags' => $hashtags ? $hashtags : null,
 );
 ?>
 <div id="wp-share-buttons-x-<?php echo esc_attr( $post_id ); ?>"

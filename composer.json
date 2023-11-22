@@ -1,35 +1,35 @@
 {
-  "name": "inc2734/wp-share-buttons",
-  "description": "A library for WordPress theme that adds social share buttons.",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Takashi Kitajima",
-      "email": "inc@2inc.org",
-      "homepage": "https://2inc.org"
-    }
-  ],
-  "require": {
-    "php": ">=7.4",
-    "inc2734/wp-ogp": "^2.0"
-  },
-  "require-dev": {
-    "wp-coding-standards/wpcs": "^2.3",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-    "yoast/phpunit-polyfills": "^1.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Inc2734\\WP_Share_Buttons\\" : "src"
-    }
-  },
-  "scripts": {
-    "lint": "./vendor/squizlabs/php_codesniffer/bin/phpcs",
-    "format": "./vendor/squizlabs/php_codesniffer/bin/phpcbf"
-  },
-  "config": {
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  }
+	"name": "inc2734/wp-share-buttons",
+	"description": "A library for WordPress theme that adds social share buttons.",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Takashi Kitajima",
+			"email": "inc@2inc.org",
+			"homepage": "https://2inc.org"
+		}
+	],
+	"require": {
+		"php": ">=7.4",
+		"inc2734/wp-ogp": "^2.0"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^2.3",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"yoast/phpunit-polyfills": "^1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Inc2734\\WP_Share_Buttons\\" : "src"
+		}
+	},
+	"scripts": {
+		"lint": "./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"format": "./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
 }
