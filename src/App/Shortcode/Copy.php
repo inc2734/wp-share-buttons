@@ -23,7 +23,7 @@ class Copy extends Base {
 		}
 
 		$title = empty( $attributes['title'] )
-			?	$this->get_document_title( $attributes['post_id'] )
+			? $this->get_document_title( $attributes['post_id'] )
 			: $attributes['title'];
 
 		$attributes['title'] = apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'copy' );
