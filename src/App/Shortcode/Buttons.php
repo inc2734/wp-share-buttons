@@ -22,7 +22,8 @@ class Buttons extends Base {
 			return;
 		}
 
-		$title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
+		// $title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
+		$title = $this->get_document_title( $attributes['post_id'] );
 
 		$attributes = shortcode_atts(
 			array(

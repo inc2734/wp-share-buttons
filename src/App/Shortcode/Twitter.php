@@ -23,14 +23,18 @@ class Twitter extends Base {
 			return;
 		}
 
-		$title = wp_strip_all_tags( get_the_title( $attributes['post_id'] ) . ' - ' . get_bloginfo( 'name' ) );
+		$title = empty( $attributes['title'] )
+			?	$this->get_document_title( $attributes['post_id'] )
+			: $attributes['title'];
+
+		$attributes['title'] = apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'twiter' );
 
 		$attributes = shortcode_atts(
 			array(
 				'type'     => 'balloon',
-				'title'    => apply_filters( 'inc2734_wp_share_buttons_shared_title', $title, 'twitter' ),
 				'post_id'  => '',
-				'hashtags' => apply_filters( 'inc2734_wp_share_buttons_shared_hashtags', '', 'twitter' ),
+				'title'    => '',
+				'hashtags' => apply_filters( 'inc2734_wp_share_buttons_shared_hashtags', '', 'x' ),
 			),
 			$attributes
 		);

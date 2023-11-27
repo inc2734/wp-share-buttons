@@ -68,4 +68,27 @@ abstract class Button {
 			return ob_get_clean();
 		}
 	}
+
+	/**
+	 * Return text of title tag.
+	 */
+	protected function get_document_title( $post_id ) {
+		$title     = '';
+		$post_type = get_post_type( $post_id );
+		$the_query = new \WP_Query(
+			array(
+				'post_type' => $post_type,
+				'p'         => 'page' !== $post_type ? $post_id : null,
+				'page_id'   => 'page' === $post_type ? $post_id : null,
+			)
+		);
+
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			$title = str_replace( '&#8211;', '-', wp_strip_all_tags( wp_get_document_title() ) );
+		}
+
+		wp_reset_postdata();
+		return $title;
+	}
 }
