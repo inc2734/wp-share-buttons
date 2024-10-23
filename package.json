@@ -1,7 +1,10 @@
 {
 	"engines": {
-		"node": ">=16.0.0",
-		"npm": ">=8 <9"
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
+	},
+	"volta": {
+		"node": "20.11.1"
 	},
 	"author": "inc2734",
 	"license": "GPL-2.0+",
@@ -43,9 +46,5 @@
 		"img": "npm run cleanup:img && cpy 'src/src/img/*' 'src/assets/img'",
 		"build": "npm-run-all -p css js img",
 		"make-pot": "npm run wp i18n -- make-pot ./src ./src/languages/generic.pot --domain=inc2734-wp-share-buttons"
-	},
-	"dependencies": {},
-	"volta": {
-		"node": "16.20.2"
 	}
 }
