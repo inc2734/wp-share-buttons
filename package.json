@@ -9,17 +9,17 @@
 	"author": "inc2734",
 	"license": "GPL-2.0+",
 	"devDependencies": {
-		"@wordpress/browserslist-config": "^5.29.0",
-		"@wordpress/env": "^8.12.0",
-		"@wordpress/scripts": "^26.17.0",
-		"autoprefixer": "^10.4.16",
+		"@wordpress/browserslist-config": "^6.10.0",
+		"@wordpress/env": "^10.10.0",
+		"@wordpress/scripts": "^30.3.0",
+		"autoprefixer": "^10.4.20",
 		"cpy-cli": "^5.0.0",
-		"cssnano": "^6.0.1",
+		"cssnano": "^7.0.6",
 		"node-sass": "^9.0.0",
 		"npm-run-all": "^4.1.5",
-		"postcss": "^8.4.31",
-		"postcss-cli": "^10.1.0",
-		"rimraf": "^5.0.5"
+		"postcss": "^8.4.47",
+		"postcss-cli": "^11.0.0",
+		"rimraf": "^6.0.1"
 	},
 	"scripts": {
 		"wp-env": "wp-env",
