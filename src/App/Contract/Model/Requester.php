@@ -23,7 +23,7 @@ abstract class Requester {
 	 */
 	public function __construct() {
 		if ( ! $this->service_name ) {
-			error_log( '[WP Share Buttons] $service_name is not defined.' );
+			error_log( '[WP Share Buttons] $service_name is not defined.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 			return;
 		}
 
@@ -112,11 +112,13 @@ abstract class Requester {
 	 * @return int Count
 	 */
 	protected function _request() {
-		if ( empty( $_GET['post_id'] ) ) {
+		$post_id = filter_input( INPUT_GET, 'post_id' );
+
+		if ( ! $post_id ) {
 			return '-';
 		}
 
-		$permalink = get_permalink( sanitize_text_field( wp_unslash( $_GET['post_id'] ) ) );
+		$permalink = get_permalink( sanitize_text_field( $post_id ) );
 		if ( ! $permalink ) {
 			return '-';
 		}

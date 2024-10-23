@@ -16,12 +16,12 @@ $query = array(
 	<?php if ( 'icon' !== $type ) : ?>
 		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>
-	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://line.me/R/msg/text/?' . sprintf( '%1$s %2$s', urlencode( $query['text'] ), urlencode( $query['url'] ) ) ); ?>" target="_blank">
+	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://line.me/R/msg/text/?' . sprintf( '%1$s %2$s', rawurlencode( $query['text'] ), rawurlencode( $query['url'] ) ) ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--line">
 			<?php
 			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/line.svg';
 			if ( file_exists( $svg_path ) ) {
-				include( $svg_path );
+				include $svg_path;
 			}
 			?>
 		</span>

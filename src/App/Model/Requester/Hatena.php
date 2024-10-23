@@ -30,7 +30,7 @@ class Hatena extends Base {
 		$body     = wp_remote_retrieve_body( $response );
 
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-			error_log( '[WP Share Buttons] Hatena request / ' . $request . ' / ' . json_encode( $body ) );
+			error_log( '[WP Share Buttons] Hatena request / ' . $request . ' / ' . wp_json_encode( $body ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		}
 
 		if ( '' === $body ) {

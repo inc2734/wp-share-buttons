@@ -31,7 +31,7 @@ class Twitter extends Base {
 		$body     = json_decode( $body, true );
 
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-			error_log( '[WP Share Buttons] Twitter request / ' . $request . ' / ' . json_encode( $body ) );
+			error_log( '[WP Share Buttons] Twitter request / ' . $request . ' / ' . wp_json_encode( $body ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		}
 
 		if ( ! is_array( $body ) ) {
@@ -44,7 +44,7 @@ class Twitter extends Base {
 
 		if ( isset( $body['error'] ) ) {
 			if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-				error_log( get_stylesheet() . ': ' . $body['error'] );
+				error_log( get_stylesheet() . ': ' . $body['error'] ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 			}
 			return '-';
 		}

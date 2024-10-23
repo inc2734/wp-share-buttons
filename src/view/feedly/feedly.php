@@ -21,7 +21,7 @@
 			<?php
 			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/feedly.svg';
 			if ( file_exists( $svg_path ) ) {
-				include( $svg_path );
+				include $svg_path;
 			}
 			?>
 		</span>

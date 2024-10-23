@@ -64,13 +64,15 @@ abstract class Button {
 			// @codingStandardsIgnoreStart
 			extract( $vars );
 			// @codingStandardsIgnoreEnd
-			include( $filepath );
+			include $filepath;
 			return ob_get_clean();
 		}
 	}
 
 	/**
 	 * Return text of title tag.
+	 *
+	 * @param int $post_id The post id.
 	 */
 	protected function get_document_title( $post_id ) {
 		$title     = '';

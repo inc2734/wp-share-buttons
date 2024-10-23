@@ -4,7 +4,7 @@ use Inc2734\WP_Share_Buttons\App\Model\Requester\Facebook;
 
 class Inc2734_WP_Share_Buttons_Facebook_Test extends WP_UnitTestCase {
 
-	public function se_tup() {
+	public function set_tup() {
 		parent::set_up();
 
 		// Loading reaquired files

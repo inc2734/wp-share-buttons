@@ -30,7 +30,7 @@ class Facebook extends Base {
 		$app_token = apply_filters( 'inc2734_wp_share_buttons_facebook_app_token', false );
 
 		if ( ! $app_token ) {
-			error_log( '[WP Share Buttons] You need to set Facebook App Token.' );
+			error_log( '[WP Share Buttons] You need to set Facebook App Token.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 			return '-';
 		}
 
@@ -40,7 +40,7 @@ class Facebook extends Base {
 		$body     = json_decode( $body, true );
 
 		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
-			error_log( '[WP Share Buttons] Facebook request / ' . $request . ' / ' . json_encode( $body ) );
+			error_log( '[WP Share Buttons] Facebook request / ' . $request . ' / ' . wp_json_encode( $body ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		}
 
 		if ( ! is_array( $body ) ) {
