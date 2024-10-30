@@ -1,53 +1,55 @@
+:where(.wp-share-buttons) {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 .wp-share-buttons {
-  $root: &;
+	overflow: hidden;
 
-  margin: 20px 0;
-  overflow: hidden;
+	&__list {
+		list-style: none;
+		margin: 0 -3px;
+		font-size: 0;
+		padding: 0;
+	}
 
-  &__list {
-    list-style: none;
-    margin: 0 -3px;
-    font-size: 0;
-    padding: 0;
-  }
+	&__item {
+		margin: 3px;
+		display: inline-block;
+		font-size: 1rem;
+		padding: 0;
+		vertical-align: top;
+		overflow: hidden;
+	}
 
-  &__item {
-    margin: 3px;
-    display: inline-block;
-    font-size: 1rem;
-    padding: 0;
-    vertical-align: top;
-    overflow: hidden;
-  }
+	/**
+	* Type: Block
+	*/
+	&--block {
+		.wp-share-buttons__list {
+			margin: 0 -3px -6px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
 
-  /**
-   * Type: Block
-   */
-  &--block {
-    #{$root}__list {
-      margin: 0 -3px -6px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
+		.wp-share-buttons__item {
+			margin: 0;
+			padding: 0 3px 6px;
+			display: block;
+			flex: 0 0 auto;
+			width: 25%;
+		}
+	}
 
-    #{$root}__item {
-      margin: 0;
-      padding: 0 3px 6px;
-      display: block;
-      flex: 0 0 auto;
-      width: 25%;
-    }
-  }
-
-  /**
-   * Type: Official
-   */
-  &--official {
-    #{$root}__item {
-      line-height: 1;
-      font-size: 0;
-      vertical-align: top;
-    }
-  }
+	/**
+	* Type: Official
+	*/
+	&--official {
+		.wp-share-buttons__item {
+			line-height: 1;
+			font-size: 0;
+			vertical-align: top;
+		}
+	}
 }
