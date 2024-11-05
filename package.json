@@ -9,9 +9,9 @@
 	"author": "inc2734",
 	"license": "GPL-2.0+",
 	"devDependencies": {
-		"@wordpress/browserslist-config": "^6.10.0",
-		"@wordpress/env": "^10.10.0",
-		"@wordpress/scripts": "^30.3.0",
+		"@wordpress/browserslist-config": "^6.11.0",
+		"@wordpress/env": "^10.11.0",
+		"@wordpress/scripts": "^30.4.0",
 		"autoprefixer": "^10.4.20",
 		"cpy-cli": "^5.0.0",
 		"cssnano": "^7.0.6",

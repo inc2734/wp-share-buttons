@@ -15,8 +15,6 @@ class Bootstrap {
 	 * Constructor.
 	 */
 	public function __construct() {
-		load_textdomain( 'inc2734-wp-share-buttons', __DIR__ . '/languages/' . get_locale() . '.mo' );
-
 		new Shortcode\Facebook( 'wp_share_buttons_facebook' );
 		new Shortcode\Twitter( 'wp_share_buttons_twitter' );
 		new Shortcode\X( 'wp_share_buttons_x' );
@@ -30,10 +28,18 @@ class Bootstrap {
 		new Shortcode\Copy( 'wp_share_buttons_copy' );
 		new Shortcode\Buttons( 'wp_share_buttons' );
 
+		add_action( 'init', array( $this, '_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, '_enqueue_scripts' ), 9 );
 		add_action( 'wp_enqueue_scripts', array( $this, '_enqueue_styles' ), 9 );
 		add_action( 'enqueue_block_editor_assets', array( $this, '_enqueue_styles' ), 9 );
 		add_action( 'after_setup_theme', array( $this, '_add_editor_style' ) );
+	}
+
+	/**
+	 * Load textdomain.
+	 */
+	public function _init() {
+		load_textdomain( 'inc2734-wp-share-buttons', __DIR__ . '/languages/' . get_locale() . '.mo' );
 	}
 
 	/**
