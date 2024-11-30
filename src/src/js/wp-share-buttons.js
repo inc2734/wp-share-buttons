@@ -1,6 +1,7 @@
 import Inc2734_WP_Share_Buttons_Facebook from './_facebook.js';
 import Inc2734_WP_Share_Buttons_Twitter from './_twitter.js';
 import Inc2734_WP_Share_Buttons_X from './_x.js';
+import Inc2734_WP_Share_Buttons_Threads from './_threads.js';
 import Inc2734_WP_Share_Buttons_Hatena from './_hatena.js';
 import Inc2734_WP_Share_Buttons_Line from './_line.js';
 import Inc2734_WP_Share_Buttons_Pocket from './_pocket.js';
@@ -19,6 +20,9 @@ document.addEventListener(
 
     const xButtons = document.querySelectorAll('.wp-share-button--x');
     [].slice.call(xButtons).forEach((button) => new Inc2734_WP_Share_Buttons_X(button));
+
+    const threadsButtons = document.querySelectorAll('.wp-share-button--threads');
+    [].slice.call(threadsButtons).forEach((button) => new Inc2734_WP_Share_Buttons_Threads(button));
 
     const hatenaButtons = document.querySelectorAll('.wp-share-button--hatena');
     [].slice.call(hatenaButtons).forEach((button) => new Inc2734_WP_Share_Buttons_Hatena(button));

@@ -62,6 +62,11 @@ add_filter(
 [wp_share_buttons_x type="(Optional)" title="(Optional)" post_id="(Required)"]
 ```
 
+### Threads
+```
+[wp_share_buttons_threads type="(Optional)" title="(Optional)" post_id="(Required)"]
+```
+
 ### Hatna Bookmark
 ```
 [wp_share_buttons_hatena type="(Optional)" post_id="(Required)"]

@@ -18,6 +18,7 @@ class Bootstrap {
 		new Shortcode\Facebook( 'wp_share_buttons_facebook' );
 		new Shortcode\Twitter( 'wp_share_buttons_twitter' );
 		new Shortcode\X( 'wp_share_buttons_x' );
+		new Shortcode\Threads( 'wp_share_buttons_threads' );
 		new Shortcode\Hatena( 'wp_share_buttons_hatena' );
 		new Shortcode\Feedly( 'wp_share_buttons_feedly' );
 		new Shortcode\GooglePlus( 'wp_share_buttons_google_plus' );
