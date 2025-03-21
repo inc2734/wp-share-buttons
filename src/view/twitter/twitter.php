@@ -14,13 +14,9 @@ $query = array(
 <div id="wp-share-buttons-twitter-<?php echo esc_attr( $post_id ); ?>"
 	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--twitter"
 	data-wp-share-buttons-postid="<?php echo esc_attr( $post_id ); ?>"
-	data-wp-share-buttons-has-cache="<?php echo esc_attr( $has_cache ); ?>"
-	data-wp-share-buttons-cache-expiration="<?php echo esc_attr( $expiration ); ?>"
 >
 	<?php if ( 'icon' !== $type ) : ?>
-		<div class="wp-share-button__count">
-			<?php echo esc_html( $count ); ?>
-		</div>
+		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://twitter.com/intent/tweet?' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--twitter">

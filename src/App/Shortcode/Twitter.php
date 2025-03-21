@@ -45,28 +45,13 @@ class Twitter extends Base {
 			$file = 'twitter';
 		}
 
-		if ( function_exists( 'scc_get_share_twitter' ) ) {
-			$has_cache  = true;
-			$expiration = null;
-			$count      = scc_get_share_twitter();
-		} else {
-			$count_cache = new Count_Cache( $attributes['post_id'], 'twitter' );
-			$has_cache   = $count_cache->is_enabled();
-			$expiration  = $count_cache->get_cache_expiration();
-			$cache       = $count_cache->get();
-			$count       = $count_cache->is_enabled() ? $cache : '-';
-		}
-
 		return $this->render(
 			'twitter/' . $file,
 			array(
-				'type'       => $attributes['type'],
-				'title'      => $attributes['title'],
-				'post_id'    => $attributes['post_id'],
-				'hashtags'   => $attributes['hashtags'],
-				'has_cache'  => $has_cache,
-				'expiration' => $expiration,
-				'count'      => $count,
+				'type'     => $attributes['type'],
+				'title'    => $attributes['title'],
+				'post_id'  => $attributes['post_id'],
+				'hashtags' => $attributes['hashtags'],
 			)
 		);
 	}
