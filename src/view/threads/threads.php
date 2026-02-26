@@ -12,6 +12,9 @@ $query = array(
 <div id="wp-share-buttons-threads-<?php echo esc_attr( $post_id ); ?>"
 	class="wp-share-button wp-share-button--<?php echo esc_attr( $type ); ?> wp-share-button--threads"
 >
+	<?php if ( 'icon' !== $type ) : ?>
+		<div class="wp-share-button__count">-</div>
+	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://www.threads.net/intent/post?' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
 		<span class="wp-share-button__icon wp-share-button__icon--threads">
 			<?php
