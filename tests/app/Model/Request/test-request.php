@@ -12,7 +12,7 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 		new Bootstrap();
 
 		// Through nonce check
-		$nonce = wp_create_nonce( 'wp_share_buttons_facebook' );
+		$nonce = wp_create_nonce( 'inc2734_wp_share_buttons_hatena' );
 		$_REQUEST['_ajax_nonce'] = $nonce;
 		add_filter( 'wp_doing_ajax', '__return_true' );
 		add_filter( 'wp_die_ajax_handler', function( $ajax_wp_die_handler ) {
@@ -21,6 +21,7 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 	}
 
 	public function tear_down() {
+		unset( $_GET['post_id'], $_REQUEST['_ajax_nonce'] );
 		parent::tear_down();
 	}
 
@@ -44,7 +45,14 @@ class Inc2734_WP_Share_Buttons_Requester_Test extends WP_UnitTestCase {
 		ob_start();
 		$object->_ajax();
 		$response = json_decode( ob_get_clean(), true );
-		$this->assertSame( 0, (int) $response['count'] );
-		$this->assertSame( 0, (int) $count_cache->get() );
+		$this->assertSame( '-', $response['count'] );
+		$this->assertSame( '-', $count_cache->get() );
+
+		// Pattern: cached count
+		$count_cache->update( 42 );
+		ob_start();
+		$object->_ajax();
+		$response = json_decode( ob_get_clean(), true );
+		$this->assertSame( 42, $response['count'] );
 	}
 }
